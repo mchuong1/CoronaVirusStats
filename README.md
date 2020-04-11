@@ -1,2 +1,0 @@
-# CoronaVirusStats
-Created with CodeSandbox
