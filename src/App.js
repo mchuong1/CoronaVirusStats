@@ -1,14 +1,14 @@
 import React from "react";
 import "./styles.css";
-import Map from "./components/Map";
+import CaseGraph from "./components/CaseGraph";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Corona Virus Tracker</h1>
-        <h2>See live stats about corona virus</h2>
-        <Map />
+        <h1>Matt's Corona Virus Tracker</h1>
+        <h2>See daily live stats about corona virus</h2>
+        <CaseGraph />
       </div>
     );
   }
