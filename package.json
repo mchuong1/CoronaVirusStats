@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "gatsby-cli": "^2.12.34",
     "react": "16.12.0",

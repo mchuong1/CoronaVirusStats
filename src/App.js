@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import CaseGraph from "./components/CaseGraph";
+import ActiveCaseGraph from "./components/ActiveCaseGraph";
 
 class App extends React.Component {
   render() {
@@ -8,11 +8,18 @@ class App extends React.Component {
       <div className="App">
         <h1>Matt's Corona Virus Tracker</h1>
         <h2>See daily live stats about corona virus</h2>
-        <CaseGraph />
+        <div>
+          <select>
+            <option value="united-states">United States</option>
+          </select>
+          <ActiveCaseGraph />
+        </div>
       </div>
     );
   }
-  componentDidMount() {}
+  componentDidMount() {
+
+  }
 }
 
 export default App;
