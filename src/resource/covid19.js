@@ -14,35 +14,11 @@ export function getSummary(){
     }
 }
 
-export function getDayOneTotalAllStatus(country, type){
+export function getDayOneTotalAllStatus(country){
     try{
         return axios.get('https://api.covid19api.com/total/dayone/country/' + country)
-        .then(function(response) {
-            var Cases = []
-            var dates = []
-            var date
-
-            response.data.forEach(element => {
-                if(type === 'Active') Cases.push(element.Active)
-                else if(type === 'Death') Cases.push(element.Deaths)
-                else if(type === 'Recovered') Cases.push(element.Recovered)
-                date = transformISODate(element.Date)
-                dates.push(date)
-            });
-            
-            return {
-                labels: dates,
-                datasets: [
-                  {
-                    label: 'Covid-19 '+ type +' Cases',
-                    backgroundColor: 'rgba(255,0,0)',
-                    borderColor: 'rgba(0,0,0,1)',
-                    borderWidth: 2,
-                    pointRadius: 1,
-                    data: Cases
-                  }
-                ]
-            }
+        .then(function(response) {         
+            return response.data
         })
         .catch(function(error){
             console.log(error)
@@ -61,7 +37,7 @@ export function getWorldTotalWIP(){
     })
 }
 
-function transformISODate(isoDate){
+export function transformISODate(isoDate){
     var date = new Date(isoDate);
     var year = date.getFullYear();
     var month = date.getMonth()+1;

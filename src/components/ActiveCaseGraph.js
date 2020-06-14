@@ -1,12 +1,11 @@
 import React from "react"
 import { Line } from "react-chartjs-2"
-import { getDayOneTotalAllStatus } from "../resource/covid19"
+import { transformISODate } from "../resource/covid19"
 
 //Problems
 //Grab total Active cases for most recent day
 
 class ActiveCaseGraph extends React.Component {
-
     constructor(){
         super()
         this.state = {
@@ -26,10 +25,31 @@ class ActiveCaseGraph extends React.Component {
     }
 
     render() {
+        var cases = []
+        var dates = []
+        var date
+        this.props.data.forEach(element => {
+            cases.push(element.Active)
+            date = transformISODate(element.Date)
+            dates.push(date)
+        })
         return (
-        <div style={{width:"40%", height: 400}}>
+        <div>
+            <h3>Total Active Cases: {cases[cases.length-1]}</h3>
             <Line
-            data={this.state.dayOneStatus}
+            data= {{
+                labels: dates,
+                datasets: [
+                    {
+                        label: 'Covid-19 Active Cases',
+                        backgroundColor: 'rgba(255,0,0)',
+                        borderColor: 'rgba(0,0,0,1)',
+                        borderWidth: 2,
+                        pointRadius: 1,
+                        data: cases
+                    }
+                ]
+            }}
             options={{
                 maintainAspectRatio: false,
                 title:{
@@ -44,11 +64,7 @@ class ActiveCaseGraph extends React.Component {
         )
     }
 
-    componentDidMount(){
-        getDayOneTotalAllStatus("united-states", 'Active')
-        .then(response => this.setState({dayOneStatus: response}))
-        .catch(err => console.log(err))
-    }
+    componentDidMount(){}
     
 }
 

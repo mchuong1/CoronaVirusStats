@@ -1,6 +1,6 @@
 import React from "react"
 import { Line } from "react-chartjs-2"
-import { getDayOneTotalAllStatus } from "../resource/covid19"
+import { transformISODate } from "../resource/covid19"
 
 class RecoveredGraph extends React.Component {
 
@@ -23,10 +23,31 @@ class RecoveredGraph extends React.Component {
     }
 
     render() {
+        var cases = []
+        var dates = []
+        var date
+        this.props.data.forEach(element => {
+            cases.push(element.Recovered)
+            date = transformISODate(element.Date)
+            dates.push(date)
+        })
         return (
-        <div style={{width:"40%", height: 400}}>
+        <div>
+            <h3>Total Recovered Cases: {cases[cases.length-1]}</h3>
             <Line
-            data={this.state.dayOneStatus}
+            data= {{
+                labels: dates,
+                datasets: [
+                    {
+                        label: 'Covid-19 Recovered Cases',
+                        backgroundColor: 'rgba(0,204,0)',
+                        borderColor: 'rgba(0,0,0,1)',
+                        borderWidth: 2,
+                        pointRadius: 1,
+                        data: cases
+                    }
+                ]
+            }}
             options={{
                 maintainAspectRatio: false,
                 title:{
@@ -41,11 +62,7 @@ class RecoveredGraph extends React.Component {
         )
     }
 
-    componentDidMount(){
-        getDayOneTotalAllStatus("united-states", 'Recovered')
-        .then(response => this.setState({dayOneStatus: response}))
-        .catch(err => console.log(err))
-    }
+    componentDidMount(){}
     
 }
 
