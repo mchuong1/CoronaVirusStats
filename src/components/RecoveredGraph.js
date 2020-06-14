@@ -2,10 +2,7 @@ import React from "react"
 import { Line } from "react-chartjs-2"
 import { getDayOneTotalAllStatus } from "../resource/covid19"
 
-//Problems
-//Grab total Active cases for most recent day
-
-class ActiveCaseGraph extends React.Component {
+class RecoveredGraph extends React.Component {
 
     constructor(){
         super()
@@ -34,7 +31,7 @@ class ActiveCaseGraph extends React.Component {
                 maintainAspectRatio: false,
                 title:{
                     display: true,
-                    text:"Covid-19 Active Cases",
+                    text:"Covid-19 Recovered Cases",
                     fontsize: 20},
                 legend:{
                     display: true,
@@ -45,11 +42,11 @@ class ActiveCaseGraph extends React.Component {
     }
 
     componentDidMount(){
-        getDayOneTotalAllStatus("united-states", 'Active')
+        getDayOneTotalAllStatus("united-states", 'Recovered')
         .then(response => this.setState({dayOneStatus: response}))
         .catch(err => console.log(err))
     }
     
 }
 
-export default ActiveCaseGraph
+export default RecoveredGraph

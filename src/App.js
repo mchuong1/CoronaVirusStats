@@ -1,6 +1,8 @@
-import React from "react";
-import "./styles.css";
-import ActiveCaseGraph from "./components/ActiveCaseGraph";
+import React from "react"
+import "./styles.css"
+import ActiveCaseGraph from "./components/ActiveCaseGraph"
+import DeathGraph from './components/DeathGraph'
+import RecoveredGraph from './components/RecoveredGraph'
 
 class App extends React.Component {
   render() {
@@ -13,6 +15,8 @@ class App extends React.Component {
             <option value="united-states">United States</option>
           </select>
           <ActiveCaseGraph />
+          <DeathGraph />
+          <RecoveredGraph />
         </div>
       </div>
     );
