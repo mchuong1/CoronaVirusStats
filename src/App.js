@@ -5,6 +5,7 @@ import ActiveCaseGraph from "./components/ActiveCaseGraph"
 import DeathGraph from './components/DeathGraph'
 import RecoveredGraph from './components/RecoveredGraph'
 import ConfirmedGraph from './components/ConfirmedGraph'
+import NewCasesGraph from './components/NewCasesGraph'
 
 class App extends React.Component {
   constructor(){
@@ -43,6 +44,7 @@ class App extends React.Component {
             <ActiveCaseGraph data={this.state.data}/>
           </div>
           <div className='column-2'>
+            <NewCasesGraph data={this.state.data}/>
             <RecoveredGraph data={this.state.data}/>
             <DeathGraph data={this.state.data}/>
           </div>
