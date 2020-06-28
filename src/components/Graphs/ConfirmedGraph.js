@@ -36,10 +36,11 @@ class ConfirmedGraph extends React.Component {
             }
         })
         return (
-        <div className='graph'>
+        <div>
             <h3>Total Confirmed Cases: {cases[cases.length-1]}</h3>
             <Line
-            height={1}
+            width={100}
+            height={50}
             data= {{
                 labels: dates,
                 datasets: [
@@ -54,7 +55,7 @@ class ConfirmedGraph extends React.Component {
                 ]
             }}
             options={{
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
                 title:{
                     display: true,
                     text:"Covid-19 Confirmed Cases",

@@ -43,6 +43,8 @@ class RecoveredGraph extends React.Component {
         <div>
             <h3>Daily Recovered Cases: {cases[cases.length-1]}</h3>
             <Line
+            width={100}
+            height={50}
             data= {{
                 labels: dates,
                 datasets: [
@@ -57,7 +59,7 @@ class RecoveredGraph extends React.Component {
                 ]
             }}
             options={{
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
                 title:{
                     display: true,
                     text:"Covid-19 Recovered Cases",

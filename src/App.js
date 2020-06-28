@@ -31,7 +31,7 @@ class App extends React.Component {
 
   render() {
     var countriesSlugList = this.state.countries.map(function(country){
-      return <option>{country.Slug}</option>
+    return <option key={country.ISO2} value={country.Slug}>{country.Country}</option>
     })
     countriesSlugList.sort()
     return (
