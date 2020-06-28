@@ -28,7 +28,7 @@ class NewCasesGraph extends React.Component {
         var date
         for(var i = 1; i <= this.props.data.length-1; i++){
             var newcase = this.props.data[i].Confirmed - this.props.data[i-1].Confirmed
-            if(newcase > 100){
+            if(newcase > 0){
                 cases.push(newcase)
                 date = transformISODate(this.props.data[i].Date)
                 dates.push(date)

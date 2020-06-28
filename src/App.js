@@ -24,14 +24,17 @@ class App extends React.Component {
             ]
         },
         data: [],
-        country: '',
+        country: 'United States',
         countries: []
     }
+    this.getCountryStats = this.getCountryStats.bind(this)
 }
 
   render() {
     var countriesSlugList = this.state.countries.map(function(country){
-    return <option key={country.ISO2} value={country.Slug}>{country.Country}</option>
+      if(country.Slug !== 'united-states'){
+        return <option key={country.ISO2} value={country.Slug}>{country.Country}</option>
+      }
     })
     countriesSlugList.sort()
     return (
@@ -40,7 +43,8 @@ class App extends React.Component {
           <div className="header">
             <h1>Matt's Corona Virus Tracker</h1>
             <h2>See daily live stats about corona virus</h2>
-            <select className="country-select">
+          <select className="country-select" onChange={this.getCountryStats}>
+              <option value="united-states" selected>United States</option>
               {countriesSlugList}
             </select>
           </div>
@@ -64,6 +68,11 @@ class App extends React.Component {
 
     getCountries()
     .then(response => this.setState({countries:response}))
+    .catch(err => console.log(err))
+  }
+  getCountryStats(event){
+    getDayOneTotalAllStatus(event.target.value)
+    .then(response => this.setState({data: response}))
     .catch(err => console.log(err))
   }
 }

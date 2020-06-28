@@ -29,11 +29,9 @@ class ConfirmedGraph extends React.Component {
         var dates = []
         var date
         this.props.data.forEach(element => {
-            if(element.Confirmed > 100){
-                cases.push(element.Confirmed)
-                date = transformISODate(element.Date)
-                dates.push(date)
-            }
+            cases.push(element.Confirmed)
+            date = transformISODate(element.Date)
+            dates.push(date)
         })
         return (
         <div>
