@@ -1,9 +1,11 @@
 import React from "react"
 import { Line } from "react-chartjs-2"
-import { transformISODate } from "../resource/covid19"
+import { transformISODate } from "../../resource/covid19"
 
-class NewCasesGraph extends React.Component {
+//Problems
+//Grab total Active cases for most recent day
 
+class ActiveCaseGraph extends React.Component {
     constructor(){
         super()
         this.state = {
@@ -26,23 +28,24 @@ class NewCasesGraph extends React.Component {
         var cases = []
         var dates = []
         var date
-        for(var i = 1; i <= this.props.data.length-1; i++){
-            var newcase = this.props.data[i].Confirmed - this.props.data[i-1].Confirmed
-            cases.push(newcase)
-            date = transformISODate(this.props.data[i].Date)
-            dates.push(date)
-        }
+        this.props.data.forEach(element => {
+            date = transformISODate(element.Date)
+            if(date !== '06-23' && element.Active > 100){
+                cases.push(element.Active)
+                dates.push(date)
+            }
+        })
 
         return (
         <div>
-            <h3>Today New Cases: {cases[cases.length-1]}</h3>
+            <h3>Total Active Cases: {cases[cases.length-1]}</h3>
             <Line
             data= {{
                 labels: dates,
                 datasets: [
                     {
-                        label: 'Covid-19 New Cases',
-                        backgroundColor: 'rgba(255,255,0)',
+                        label: 'Covid-19 Active Cases',
+                        backgroundColor: 'rgba(255,0,0)',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
                         pointRadius: 1,
@@ -54,10 +57,10 @@ class NewCasesGraph extends React.Component {
                 maintainAspectRatio: false,
                 title:{
                     display: true,
-                    text:"Covid-19 New Cases",
+                    text:"Covid-19 Active Cases",
                     fontsize: 20},
                 legend:{
-                    display: true,
+                    display: false,
                 }}}
             />
         </div>
@@ -68,4 +71,4 @@ class NewCasesGraph extends React.Component {
     
 }
 
-export default NewCasesGraph
+export default ActiveCaseGraph

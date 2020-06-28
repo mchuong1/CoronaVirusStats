@@ -1,8 +1,11 @@
 import React from "react"
 import { Line } from "react-chartjs-2"
-import { transformISODate } from "../resource/covid19"
+import { transformISODate } from "../../resource/covid19"
 
-class DeathGraph extends React.Component {
+//Problems
+//Grab total Active cases for most recent day
+
+class ConfirmedGraph extends React.Component {
     constructor(){
         super()
         this.state = {
@@ -10,7 +13,7 @@ class DeathGraph extends React.Component {
                 labels: ["5/20","5/21","5/22","5/23","5/24"],
                 datasets: [
                   {
-                    label: 'Covid-19 Death Cases',
+                    label: 'Covid-19 Active Cases',
                     backgroundColor: 'rgba(255,0,0)',
                     borderColor: 'rgba(0,0,0,1)',
                     borderWidth: 2,
@@ -26,20 +29,23 @@ class DeathGraph extends React.Component {
         var dates = []
         var date
         this.props.data.forEach(element => {
-            cases.push(element.Deaths)
-            date = transformISODate(element.Date)
-            dates.push(date)
+            if(element.Confirmed > 100){
+                cases.push(element.Confirmed)
+                date = transformISODate(element.Date)
+                dates.push(date)
+            }
         })
         return (
-        <div>
-            <h3>Total Death Cases: {cases[cases.length-1]}</h3>
+        <div className='graph'>
+            <h3>Total Confirmed Cases: {cases[cases.length-1]}</h3>
             <Line
+            height={1}
             data= {{
                 labels: dates,
                 datasets: [
                     {
-                        label: 'Covid-19 Death Cases',
-                        backgroundColor: 'rgba(153,0,0)',
+                        label: 'Covid-19 Confirmed Cases',
+                        backgroundColor: 'rgba(255,128,0)',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
                         pointRadius: 1,
@@ -51,16 +57,18 @@ class DeathGraph extends React.Component {
                 maintainAspectRatio: false,
                 title:{
                     display: true,
-                    text:"Covid-19 Death Cases",
+                    text:"Covid-19 Confirmed Cases",
                     fontsize: 20},
                 legend:{
-                    display: true,
+                    display: false,
                 }}}
             />
         </div>
         )
     }
+
     componentDidMount(){}
+    
 }
 
-export default DeathGraph
+export default ConfirmedGraph

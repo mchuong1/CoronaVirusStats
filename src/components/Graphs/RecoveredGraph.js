@@ -1,6 +1,6 @@
 import React from "react"
 import { Line } from "react-chartjs-2"
-import { transformISODate } from "../resource/covid19"
+import { transformISODate } from "../../resource/covid19"
 
 class RecoveredGraph extends React.Component {
 
@@ -26,14 +26,22 @@ class RecoveredGraph extends React.Component {
         var cases = []
         var dates = []
         var date
-        this.props.data.forEach(element => {
-            cases.push(element.Recovered)
-            date = transformISODate(element.Date)
-            dates.push(date)
-        })
+        // this.props.data.forEach(element => {
+        //     cases.push(element.Recovered)
+        //     date = transformISODate(element.Date)
+        //     dates.push(date)
+        // })
+        for(var i = 1; i <= this.props.data.length-1; i++){
+            var recoveredCase = this.props.data[i].Recovered - this.props.data[i-1].Recovered
+            if(recoveredCase < 10000 && recoveredCase > 0){
+                cases.push(recoveredCase)
+                date = transformISODate(this.props.data[i].Date)
+                dates.push(date)
+            }
+        }
         return (
         <div>
-            <h3>Total Recovered Cases: {cases[cases.length-1]}</h3>
+            <h3>Daily Recovered Cases: {cases[cases.length-1]}</h3>
             <Line
             data= {{
                 labels: dates,
@@ -55,7 +63,7 @@ class RecoveredGraph extends React.Component {
                     text:"Covid-19 Recovered Cases",
                     fontsize: 20},
                 legend:{
-                    display: true,
+                    display: false,
                 }}}
             />
         </div>

@@ -27,8 +27,19 @@ export function getDayOneTotalAllStatus(country){
         console.log(err)
     }
 }
+
 export function getWorldTotalWIP(){
     return axios.get('https://api.covid19api.com/world/total')
+    .then(function(response) {
+        return response.data
+    })
+    .catch(function(error){
+        console.log(error)
+    })
+}
+
+export function getCountries(){
+    return axios.get('https://api.covid19api.com/countries')
     .then(function(response) {
         return response.data
     })
@@ -51,3 +62,4 @@ export function transformISODate(isoDate){
 
     return month + '-' + dt;
 }
+

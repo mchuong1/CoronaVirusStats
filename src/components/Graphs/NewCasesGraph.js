@@ -1,11 +1,9 @@
 import React from "react"
 import { Line } from "react-chartjs-2"
-import { transformISODate } from "../resource/covid19"
+import { transformISODate } from "../../resource/covid19"
 
-//Problems
-//Grab total Active cases for most recent day
+class NewCasesGraph extends React.Component {
 
-class ConfirmedGraph extends React.Component {
     constructor(){
         super()
         this.state = {
@@ -28,21 +26,24 @@ class ConfirmedGraph extends React.Component {
         var cases = []
         var dates = []
         var date
-        this.props.data.forEach(element => {
-            cases.push(element.Confirmed)
-            date = transformISODate(element.Date)
-            dates.push(date)
-        })
+        for(var i = 1; i <= this.props.data.length-1; i++){
+            var newcase = this.props.data[i].Confirmed - this.props.data[i-1].Confirmed
+            if(newcase > 100){
+                cases.push(newcase)
+                date = transformISODate(this.props.data[i].Date)
+                dates.push(date)
+            }
+        }
         return (
         <div>
-            <h3>Total Confirmed Cases: {cases[cases.length-1]}</h3>
+            <h3>Daily New Cases: {cases[cases.length-1]}</h3>
             <Line
             data= {{
                 labels: dates,
                 datasets: [
                     {
-                        label: 'Covid-19 Confirmed Cases',
-                        backgroundColor: 'rgba(255,128,0)',
+                        label: 'Covid-19 New Cases',
+                        backgroundColor: 'rgba(255,255,0)',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
                         pointRadius: 1,
@@ -54,10 +55,10 @@ class ConfirmedGraph extends React.Component {
                 maintainAspectRatio: false,
                 title:{
                     display: true,
-                    text:"Covid-19 Confirmed Cases",
+                    text:"Covid-19 New Cases",
                     fontsize: 20},
                 legend:{
-                    display: true,
+                    display: false,
                 }}}
             />
         </div>
@@ -68,4 +69,4 @@ class ConfirmedGraph extends React.Component {
     
 }
 
-export default ConfirmedGraph
+export default NewCasesGraph

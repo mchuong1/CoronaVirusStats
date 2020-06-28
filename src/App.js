@@ -1,11 +1,11 @@
 import React from "react"
 import "./styles.css"
-import { getDayOneTotalAllStatus } from "./resource/covid19"
-import ActiveCaseGraph from "./components/ActiveCaseGraph"
-import DeathGraph from './components/DeathGraph'
-import RecoveredGraph from './components/RecoveredGraph'
-import ConfirmedGraph from './components/ConfirmedGraph'
-import NewCasesGraph from './components/NewCasesGraph'
+import { getDayOneTotalAllStatus, getCountries } from "./resource/covid19"
+import ActiveCaseGraph from "./components/Graphs/ActiveCaseGraph"
+import DeathGraph from './components/Graphs/DeathGraph'
+import RecoveredGraph from './components/Graphs/RecoveredGraph'
+import ConfirmedGraph from './components/Graphs/ConfirmedGraph'
+import NewCasesGraph from './components/Graphs/NewCasesGraph'
 
 class App extends React.Component {
   constructor(){
@@ -24,11 +24,16 @@ class App extends React.Component {
             ]
         },
         data: [],
-        country: ''
+        country: '',
+        countries: []
     }
 }
 
   render() {
+    var countriesSlugList = this.state.countries.map(function(country){
+      return <option>{country.Slug}</option>
+    })
+    countriesSlugList.sort()
     return (
       <div className="App">
         <div className="center">
@@ -36,7 +41,7 @@ class App extends React.Component {
             <h1>Matt's Corona Virus Tracker</h1>
             <h2>See daily live stats about corona virus</h2>
             <select className="country-select">
-              <option value="united-states">United States</option>
+              {countriesSlugList}
             </select>
           </div>
           <div className='column-1'>
@@ -55,6 +60,10 @@ class App extends React.Component {
   componentDidMount() {
     getDayOneTotalAllStatus("united-states")
     .then(response => this.setState({data: response}))
+    .catch(err => console.log(err))
+
+    getCountries()
+    .then(response => this.setState({countries:response}))
     .catch(err => console.log(err))
   }
 }
