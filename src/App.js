@@ -32,9 +32,7 @@ class App extends React.Component {
 
   render() {
     var countriesSlugList = this.state.countries.map(function(country){
-      if(country.Slug !== 'united-states'){
-        return <option key={country.ISO2} value={country.Slug}>{country.Country}</option>
-      }
+      return <option key={country.ISO2} value={country.Slug}>{country.Country}</option>
     })
     countriesSlugList.sort()
     return (
@@ -43,8 +41,7 @@ class App extends React.Component {
           <div className="header">
             <h1>Matt's Corona Virus Tracker</h1>
             <h2>See daily live stats about corona virus</h2>
-          <select className="country-select" onChange={this.getCountryStats}>
-              <option value="united-states" selected>United States</option>
+          <select className="country-select" onChange={this.getCountryStats} value={'united-states'}>
               {countriesSlugList}
             </select>
           </div>
