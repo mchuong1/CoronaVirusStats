@@ -6,6 +6,7 @@ import DeathGraph from './components/Graphs/DeathGraph'
 import RecoveredGraph from './components/Graphs/RecoveredGraph'
 import ConfirmedGraph from './components/Graphs/ConfirmedGraph'
 import NewCasesGraph from './components/Graphs/NewCasesGraph'
+import CountryList from './components/CountryList'
 
 class App extends React.Component {
   constructor(){
@@ -24,26 +25,21 @@ class App extends React.Component {
             ]
         },
         data: [],
-        country: 'United States',
+        country: 'United States of America',
         countries: []
     }
     this.getCountryStats = this.getCountryStats.bind(this)
 }
 
   render() {
-    var countriesSlugList = this.state.countries.map(function(country){
-      return <option key={country.ISO2} value={country.Slug}>{country.Country}</option>
-    })
-    countriesSlugList.sort()
     return (
       <div className="App">
         <div className="center">
           <div className="header">
             <h1>Matt's Corona Virus Tracker</h1>
             <h2>See daily live stats about corona virus</h2>
-          <select className="country-select" onChange={this.getCountryStats} value={'united-states'}>
-              {countriesSlugList}
-            </select>
+            <CountryList countries={this.state.countries} getCountryStats={this.getCountryStats}/>
+            <h3>{this.state.country}</h3>
           </div>
           <div className='column-1'>
             <ConfirmedGraph data={this.state.data}/>
@@ -68,8 +64,8 @@ class App extends React.Component {
     .catch(err => console.log(err))
   }
   getCountryStats(event){
-    getDayOneTotalAllStatus(event.target.value)
-    .then(response => this.setState({data: response}))
+    getDayOneTotalAllStatus(event.Slug)
+    .then(response => this.setState({data: response, country: event.Country}))
     .catch(err => console.log(err))
   }
 }
