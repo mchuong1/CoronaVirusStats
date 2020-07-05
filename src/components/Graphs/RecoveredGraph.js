@@ -49,7 +49,7 @@ class RecoveredGraph extends React.Component {
                 labels: dates,
                 datasets: [
                     {
-                        label: 'Covid-19 Recovered Cases',
+                        label: 'Recovered',
                         backgroundColor: 'rgba(0,204,0)',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
@@ -62,11 +62,17 @@ class RecoveredGraph extends React.Component {
                 maintainAspectRatio: true,
                 title:{
                     display: true,
-                    text:"Covid-19 Recovered Cases",
                     fontsize: 20},
                 legend:{
                     display: false,
-                }}}
+                },
+                tooltips:{
+                    intersect: false,
+                    displayColors: false,
+                    titleFontSize: 18,
+                    bodyFontSize: 18,
+                }
+            }}
             />
         </div>
         )

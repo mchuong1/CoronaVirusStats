@@ -43,7 +43,7 @@ class ConfirmedGraph extends React.Component {
                 labels: dates,
                 datasets: [
                     {
-                        label: 'Covid-19 Confirmed Cases',
+                        label: 'Confirmed',
                         backgroundColor: 'rgba(255,128,0)',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
@@ -56,11 +56,17 @@ class ConfirmedGraph extends React.Component {
                 maintainAspectRatio: true,
                 title:{
                     display: true,
-                    text:"Covid-19 Confirmed Cases",
                     fontsize: 20},
                 legend:{
                     display: false,
-                }}}
+                },
+                tooltips:{
+                    intersect: false,
+                    displayColors: false,
+                    titleFontSize: 18,
+                    bodyFontSize: 18,
+                }
+            }}
             />
         </div>
         )

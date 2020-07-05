@@ -48,7 +48,7 @@ class DeathGraph extends React.Component {
                 labels: dates,
                 datasets: [
                     {
-                        label: 'Covid-19 Death Cases',
+                        label: 'Deaths',
                         backgroundColor: 'rgba(153,0,0)',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
@@ -61,11 +61,17 @@ class DeathGraph extends React.Component {
                 maintainAspectRatio: true,
                 title:{
                     display: true,
-                    text:"Covid-19 Death Cases",
                     fontsize: 20},
                 legend:{
                     display: false,
-                }}}
+                },
+                tooltips:{
+                    intersect: false,
+                    displayColors: false,
+                    titleFontSize: 18,
+                    bodyFontSize: 18,
+                }
+            }}
             />
         </div>
         )
