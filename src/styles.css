@@ -12,6 +12,7 @@ body{
   display: grid;
   grid-column: 2;
   grid-template-columns: 50% 50%;
+  grid-column-gap: 30px;
 }
 .column-1{
   grid-column: 1;

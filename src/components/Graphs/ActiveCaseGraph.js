@@ -30,10 +30,8 @@ class ActiveCaseGraph extends React.Component {
         var date
         this.props.data.forEach(element => {
             date = transformISODate(element.Date)
-            if(date !== '06-23'){
-                cases.push(element.Active)
-                dates.push(date)
-            }
+            cases.push(element.Active)
+            dates.push(date)
         })
 
         return (

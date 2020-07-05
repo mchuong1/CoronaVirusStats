@@ -33,7 +33,7 @@ class RecoveredGraph extends React.Component {
         // })
         for(var i = 1; i <= this.props.data.length-1; i++){
             var recoveredCase = this.props.data[i].Recovered - this.props.data[i-1].Recovered
-            if(recoveredCase < 10000 && recoveredCase > 0){
+            if(recoveredCase > 0){
                 cases.push(recoveredCase)
                 date = transformISODate(this.props.data[i].Date)
                 dates.push(date)
