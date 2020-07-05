@@ -6,18 +6,7 @@ class DeathGraph extends React.Component {
     constructor(){
         super()
         this.state = {
-            dayOneStatus: {
-                labels: ["5/20","5/21","5/22","5/23","5/24"],
-                datasets: [
-                  {
-                    label: 'Covid-19 Death Cases',
-                    backgroundColor: 'rgba(255,0,0)',
-                    borderColor: 'rgba(0,0,0,1)',
-                    borderWidth: 2,
-                    data: [0, 50, 100, 200, 300]
-                  }
-                ]
-            }
+
         }
     }
 
