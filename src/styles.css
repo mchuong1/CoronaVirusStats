@@ -7,17 +7,20 @@ body{
   display: grid;
   grid-template-columns: 15% 65% 15%;
   grid-column-gap: 45px;
+  background-color: #F4F7FF;
 }
 .center{
   display: grid;
   grid-column: 2;
   grid-template-columns: 50% 50%;
   grid-column-gap: 30px;
+  grid-row-gap: 20px;
 }
-.right{
+.card-row{
   display: grid;
-  grid-column: 3;
-  padding-top: 243px;
+  grid-column: 1 / span 2;
+  grid-template-columns: 32% 32% 33%;
+  grid-column-gap: 20px;
 }
 .column-1{
   grid-column: 1;
@@ -77,6 +80,7 @@ body{
   padding: 10px;
   border: 1px solid black;
   border-radius: 10px;
+  background-color: white;
 }
 
 .red{

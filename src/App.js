@@ -8,6 +8,8 @@ import ConfirmedGraph from './components/Graphs/ConfirmedGraph'
 import NewCasesGraph from './components/Graphs/NewCasesGraph'
 import CountryList from './components/CountryList'
 import TotalCasesCard from './components/Cards/TotalCasesCard'
+import TotalRecoveredCard from './components/Cards/TotalRecoveredCard'
+import TotalDeathsCard from './components/Cards/TotalDeathsCard'
 
 class App extends React.Component {
   constructor(){
@@ -30,18 +32,22 @@ class App extends React.Component {
             <CountryList countries={this.state.countries} getCountryStats={this.getCountryStats}/>
             <h3>{this.state.country}</h3>
           </div>
+          <div className="card-row">
+            <TotalCasesCard data={this.state.data}/>
+            <TotalRecoveredCard data={this.state.data}/>
+            <TotalDeathsCard data={this.state.data}/>
+          </div>
           <div className='column-1'>
-            <ConfirmedGraph data={this.state.data}/>
             <ActiveCaseGraph data={this.state.data}/>
+            <DeathGraph data={this.state.data}/>
           </div>
           <div className='column-2'>
             <NewCasesGraph data={this.state.data}/>
             <RecoveredGraph data={this.state.data}/>
-            <DeathGraph data={this.state.data}/>
           </div>
         </div>
         <div className="right">
-            <TotalCasesCard />
+            
           </div>
       </div>
     );

@@ -2,9 +2,6 @@ import React from "react"
 import { Line } from "react-chartjs-2"
 import { transformISODate } from "../../resource/covid19"
 
-//Problems
-//Grab total Active cases for most recent day
-
 class ActiveCaseGraph extends React.Component {
     constructor(){
         super()

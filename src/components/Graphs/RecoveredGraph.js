@@ -14,11 +14,6 @@ class RecoveredGraph extends React.Component {
         var cases = []
         var dates = []
         var date
-        // this.props.data.forEach(element => {
-        //     cases.push(element.Recovered)
-        //     date = transformISODate(element.Date)
-        //     dates.push(date)
-        // })
         for(var i = 1; i <= this.props.data.length-1; i++){
             var recoveredCase = this.props.data[i].Recovered - this.props.data[i-1].Recovered
             if(recoveredCase > 0){
