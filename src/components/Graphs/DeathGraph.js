@@ -14,11 +14,6 @@ class DeathGraph extends React.Component {
         var cases = []
         var dates = []
         var date
-        // this.props.data.forEach(element => {
-        //     cases.push(element.Deaths)
-        //     date = transformISODate(element.Date)
-        //     dates.push(date)
-        // })
         for(var i = 1; i <= this.props.data.length-1; i++){
             var deathcase = this.props.data[i].Deaths - this.props.data[i-1].Deaths
             cases.push(deathcase)
@@ -26,7 +21,7 @@ class DeathGraph extends React.Component {
             dates.push(date)
         }
         return (
-        <div>
+        <div className="card darkred">
             <h3>Daily Death Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}

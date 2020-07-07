@@ -7,6 +7,7 @@ import RecoveredGraph from './components/Graphs/RecoveredGraph'
 import ConfirmedGraph from './components/Graphs/ConfirmedGraph'
 import NewCasesGraph from './components/Graphs/NewCasesGraph'
 import CountryList from './components/CountryList'
+import TotalCasesCard from './components/Cards/TotalCasesCard'
 
 class App extends React.Component {
   constructor(){
@@ -39,6 +40,9 @@ class App extends React.Component {
             <DeathGraph data={this.state.data}/>
           </div>
         </div>
+        <div className="right">
+            <TotalCasesCard />
+          </div>
       </div>
     );
   }

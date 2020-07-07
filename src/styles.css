@@ -1,12 +1,12 @@
 body{
-  margin:0
+  margin:0;
 }
 .App {
   font-family: sans-serif;
   text-align: center;
   display: grid;
   grid-template-columns: 15% 65% 15%;
-  grid-column-gap: 10px;
+  grid-column-gap: 45px;
 }
 .center{
   display: grid;
@@ -14,13 +14,22 @@ body{
   grid-template-columns: 50% 50%;
   grid-column-gap: 30px;
 }
+.right{
+  display: grid;
+  grid-column: 3;
+  padding-top: 243px;
+}
 .column-1{
   grid-column: 1;
   display: grid;
+  height: fit-content;
+  grid-row-gap: 20px;
 }
 .column-2{
   grid-column: 2;
   display: grid;
+  height: fit-content;
+  grid-row-gap: 20px;
 }
 .header{
   display:grid;
@@ -56,7 +65,36 @@ body{
   padding: 10px 5px;
   cursor: pointer;
 }
+
 .autocomplete li:hover {
   background-color: lightgray;
   text-decoration: underline;
+}
+
+.card{
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+  height: fit-content;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.red{
+  border: 1px solid rgba(255,0,0);
+}
+
+.orange{
+  border: 1px solid rgba(255,128,0);
+}
+
+.yellow{
+  border: 1px solid rgba(255,255,0);
+}
+
+.green{
+  border: 1px solid rgba(0,204,0);
+}
+
+.darkred{
+  border: 1px solid rgba(153,0,0);
 }

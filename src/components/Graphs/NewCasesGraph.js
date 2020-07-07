@@ -24,7 +24,7 @@ class NewCasesGraph extends React.Component {
             }
         }
         return (
-        <div>
+        <div className="card yellow">
             <h3>Daily New Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}

@@ -23,7 +23,7 @@ class ActiveCaseGraph extends React.Component {
         })
 
         return (
-        <div>
+        <div className="card red">
             <h3>Total Active Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
