@@ -7,7 +7,7 @@ body{
   display: grid;
   grid-template-columns: 15% 65% 15%;
   grid-column-gap: 45px;
-  background-color: #F4F7FF;
+  background-color: #F3F3F7;
 }
 .center{
   display: grid;
@@ -84,21 +84,21 @@ body{
 }
 
 .red{
-  border: 1px solid rgba(255,0,0);
+  border: 3px solid rgba(255,0,0);
 }
 
 .orange{
-  border: 1px solid rgba(255,128,0);
+  border: 3px solid rgba(255,128,0);
 }
 
 .yellow{
-  border: 1px solid rgba(255,255,0);
+  border: 3px solid rgba(255,255,0);
 }
 
 .green{
-  border: 1px solid rgba(0,204,0);
+  border: 3px solid rgba(0,204,0);
 }
 
 .darkred{
-  border: 1px solid rgba(153,0,0);
+  border: 3px solid rgba(153,0,0);
 }
