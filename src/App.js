@@ -4,7 +4,6 @@ import { getDayOneTotalAllStatus, getCountries } from "./resource/covid19"
 import ActiveCaseGraph from "./components/Graphs/ActiveCaseGraph"
 import DeathGraph from './components/Graphs/DeathGraph'
 import RecoveredGraph from './components/Graphs/RecoveredGraph'
-import ConfirmedGraph from './components/Graphs/ConfirmedGraph'
 import NewCasesGraph from './components/Graphs/NewCasesGraph'
 import CountryList from './components/CountryList'
 import TotalCasesCard from './components/Cards/TotalCasesCard'
