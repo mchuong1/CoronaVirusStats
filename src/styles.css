@@ -12,9 +12,19 @@ body{
 .center{
   display: grid;
   grid-column: 2;
+  min-height: 100vh;
+}
+.countrystats{
+  display: grid;
   grid-template-columns: 50% 50%;
   grid-column-gap: 30px;
   grid-row-gap: 20px;
+}
+.left{
+  display:grid;
+  grid-column: 1;
+  box-shadow: 0 0 0 1px white, 0 2px 4px 1px rgba(0,0,0,.18);
+  background-color: white;
 }
 .card-row{
   display: grid;
@@ -37,8 +47,11 @@ body{
 .header{
   display:grid;
   grid-column: 1/ span 2;
+  margin-top: 30px;
 }
-
+.header h1{
+  text-align: left;
+}
 .autocomplete{
   width: 100%;
   border: 1px solid grey;
@@ -72,6 +85,24 @@ body{
 .autocomplete li:hover {
   background-color: lightgray;
   text-decoration: underline;
+}
+.sidenavbar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.sidenavbar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.sidenavbar li{
+  padding: 10px 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sidenavbar li:hover{
+  background-color: lightgray;
 }
 
 .card{

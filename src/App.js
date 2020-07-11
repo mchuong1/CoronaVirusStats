@@ -1,70 +1,36 @@
 import React from "react"
 import "./styles.css"
-import { getDayOneTotalAllStatus, getCountries } from "./resource/covid19"
-import ActiveCaseGraph from "./components/Graphs/ActiveCaseGraph"
-import DeathGraph from './components/Graphs/DeathGraph'
-import RecoveredGraph from './components/Graphs/RecoveredGraph'
-import NewCasesGraph from './components/Graphs/NewCasesGraph'
-import CountryList from './components/CountryList'
-import TotalCasesCard from './components/Cards/TotalCasesCard'
-import TotalRecoveredCard from './components/Cards/TotalRecoveredCard'
-import TotalDeathsCard from './components/Cards/TotalDeathsCard'
+import CountryStats from './components/CountryStats'
+import SideNaveBar from './components/SideNavBar'
+import Map from './components/Map'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends React.Component {
   constructor(){
     super()
-    this.state = {
-        data: [],
-        country: 'United States of America',
-        countries: []
-    }
-    this.getCountryStats = this.getCountryStats.bind(this)
-}
+  }
 
   render() {
     return (
-      <div className="App">
-        <div className="center">
-          <div className="header">
-            <h1>Matt's Corona Virus Tracker</h1>
-            <h2>See daily live stats about corona virus</h2>
-            <CountryList countries={this.state.countries} getCountryStats={this.getCountryStats}/>
-            <h3>{this.state.country}</h3>
+      <Router>
+        <div className="App">
+          <div className="left">
+            <SideNaveBar />
           </div>
-          <div className="card-row">
-            <TotalCasesCard data={this.state.data}/>
-            <TotalRecoveredCard data={this.state.data}/>
-            <TotalDeathsCard data={this.state.data}/>
+          <div className="center">
+            <Switch>
+              <Route path="/" exact component={CountryStats}/>
+              <Route path="/Map" component={Map}/>
+            </Switch>
           </div>
-          <div className='column-1'>
-            <ActiveCaseGraph data={this.state.data}/>
-            <DeathGraph data={this.state.data}/>
-          </div>
-          <div className='column-2'>
-            <NewCasesGraph data={this.state.data}/>
-            <RecoveredGraph data={this.state.data}/>
+          <div className="right">
+              
           </div>
         </div>
-        <div className="right">
-            
-          </div>
-      </div>
+      </Router>
     );
   }
-  componentDidMount() {
-    getDayOneTotalAllStatus("united-states")
-    .then(response => this.setState({data: response}))
-    .catch(err => console.log(err))
-
-    getCountries()
-    .then(response => this.setState({countries:response}))
-    .catch(err => console.log(err))
-  }
-  getCountryStats(event){
-    getDayOneTotalAllStatus(event.Slug)
-    .then(response => this.setState({data: response, country: event.Country}))
-    .catch(err => console.log(err))
-  }
+  componentDidMount() {}
 }
 
 export default App;
