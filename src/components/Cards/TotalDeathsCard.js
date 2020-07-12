@@ -13,7 +13,7 @@ class TotalDeathsCard extends React.Component {
     return (
         <div className="card darkred">
           <h2>Total Deaths</h2>
-          <h2>{totalDeaths}</h2>
+          <h1 style={{color: "rgba(153,0,0)"}}>{totalDeaths}</h1>
           <div>{newDeaths} New Deaths</div>
         </div>
     )
