@@ -9,7 +9,7 @@ class SideNavBar extends React.Component {
            <div className="sidenavbar">
            <ul>
                <Link to="/" style={{textDecoration: 'none', color: "black"}}>
-                <li>Country</li>
+                <li>Lookup by Country</li>
                </Link>
                <Link to="/Map" style={{textDecoration: 'none', color: "black"}}>
                 <li>Map</li>

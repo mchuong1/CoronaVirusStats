@@ -133,3 +133,29 @@ body{
 .darkred{
   border: 3px solid rgba(153,0,0);
 }
+
+@media (max-width: 1200px){
+  .App{
+    display: flex;
+    background-color: aliceblue;
+    flex-direction: column;
+    overflow-x: auto;
+    white-space: nowrap;
+    align-items: center;
+  }
+  .center{
+    display: flex;
+  }
+  .countrystats{
+    display: flex;
+    flex-direction: column;
+  }
+  .card-row{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (orientation: landscape){
+
+}

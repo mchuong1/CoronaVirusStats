@@ -16,9 +16,11 @@ class DeathGraph extends React.Component {
         var date
         for(var i = 1; i <= this.props.data.length-1; i++){
             var deathcase = this.props.data[i].Deaths - this.props.data[i-1].Deaths
-            cases.push(deathcase)
-            date = transformISODate(this.props.data[i].Date)
-            dates.push(date)
+            if(deathcase > 0){
+                cases.push(deathcase)
+                date = transformISODate(this.props.data[i].Date)
+                dates.push(date)
+            }
         }
         return (
         <div className="card darkred">
