@@ -13,15 +13,17 @@ class ActiveCaseGraph extends React.Component {
         var cases = []
         var dates = []
         var date
-        this.props.data.forEach(element => {
-            date = transformISODate(element.Date)
-            cases.push(element.Active)
-            dates.push(date)
-        })
-
+        for(var i = 1; i <= this.props.data.length-1; i++){
+            var newcase = this.props.data[i].Active - this.props.data[i-1].Active
+            if(newcase > 0){
+                cases.push(newcase)
+                date = transformISODate(this.props.data[i].Date)
+                dates.push(date)
+            }
+        }
         return (
         <div className="graph red">
-            <h3>Total Active Cases: {cases[cases.length-1]}</h3>
+            <h3>Daily Active Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
             height={50}
@@ -29,7 +31,7 @@ class ActiveCaseGraph extends React.Component {
                 labels: dates,
                 datasets: [
                     {
-                        label: 'Active',
+                        label: 'New',
                         backgroundColor: 'rgba(255,0,0)',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,

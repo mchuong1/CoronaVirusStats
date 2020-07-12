@@ -11,9 +11,9 @@ class TotalActiveCard extends React.Component {
       newActive = totalActive - data[data.length-2].Active
     }
     return (
-        <div className="card darkred">
+        <div className="card red">
           <h2>Total Active</h2>
-          <h2>{totalActive}</h2>
+          <h1 style={{color:'red'}}>{totalActive}</h1>
           <div>{newActive} New Active</div>
         </div>
     )

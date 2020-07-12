@@ -17,7 +17,7 @@ body{
 .countrystats{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 30px;
+  grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
 .left{
@@ -29,7 +29,7 @@ body{
 .card-row{
   display: grid;
   grid-column: 1 / span 2;
-  grid-template-columns: 32% 32% 33%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 20px;
 }
 .column-1{
