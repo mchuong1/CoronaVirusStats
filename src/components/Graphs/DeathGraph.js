@@ -23,7 +23,7 @@ class DeathGraph extends React.Component {
             }
         }
         return (
-        <div className="card darkred">
+        <div className="graph darkred">
             <h3>Daily Death Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
@@ -42,6 +42,7 @@ class DeathGraph extends React.Component {
                 ]
             }}
             options={{
+                responsive: true,
                 maintainAspectRatio: true,
                 title:{
                     display: true,

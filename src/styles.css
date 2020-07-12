@@ -107,7 +107,17 @@ body{
 
 .card{
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+  height: 143px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.graph{
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
   height: fit-content;
+  width: 31vw;
   padding: 10px;
   border: 1px solid black;
   border-radius: 10px;
@@ -136,23 +146,14 @@ body{
 
 @media (max-width: 1200px){
   .App{
-    display: flex;
+    display: grid;
     background-color: aliceblue;
-    flex-direction: column;
-    overflow-x: auto;
-    white-space: nowrap;
-    align-items: center;
   }
   .center{
-    display: flex;
+    display: grid;
   }
   .countrystats{
-    display: flex;
-    flex-direction: column;
-  }
-  .card-row{
-    display: flex;
-    flex-direction: column;
+    display: grid;
   }
 }
 

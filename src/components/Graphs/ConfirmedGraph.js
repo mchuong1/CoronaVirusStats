@@ -22,7 +22,7 @@ class ConfirmedGraph extends React.Component {
             dates.push(date)
         })
         return (
-        <div className="card orange">
+        <div className="graph orange">
             <h3>Total Confirmed Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}

@@ -24,7 +24,7 @@ class NewCasesGraph extends React.Component {
             }
         }
         return (
-        <div className="card yellow">
+        <div className="graph yellow">
             <h3>Daily New Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
@@ -43,6 +43,7 @@ class NewCasesGraph extends React.Component {
                 ]
             }}
             options={{
+                responsive: true,
                 maintainAspectRatio: true,
                 title:{
                     display: true,

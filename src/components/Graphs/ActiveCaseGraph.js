@@ -20,7 +20,7 @@ class ActiveCaseGraph extends React.Component {
         })
 
         return (
-        <div className="card red">
+        <div className="graph red">
             <h3>Total Active Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
@@ -39,6 +39,7 @@ class ActiveCaseGraph extends React.Component {
                 ]
             }}
             options={{
+                responsive: true,
                 maintainAspectRatio: true,
                 title:{
                     display: true,

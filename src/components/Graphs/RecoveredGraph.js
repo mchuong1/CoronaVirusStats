@@ -23,7 +23,7 @@ class RecoveredGraph extends React.Component {
             }
         }
         return (
-        <div className="card green">
+        <div className="graph green">
             <h3>Daily Recovered Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
@@ -42,6 +42,7 @@ class RecoveredGraph extends React.Component {
                 ]
             }}
             options={{
+                responsive: true,
                 maintainAspectRatio: true,
                 title:{
                     display: true,

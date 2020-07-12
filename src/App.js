@@ -23,8 +23,7 @@ class App extends React.Component {
               <Route path="/Map" component={Map}/>
             </Switch>
           </div>
-          <div className="right">
-              
+          <div className="right">            
           </div>
         </div>
       </Router>
