@@ -18,6 +18,11 @@ class SideNavBar extends React.Component {
               </Link>
           </ul>
           </div>
+          <div className="footer">
+            <p>{"Made with "}
+              <a href="https://covid19api.com/">COVID19 API</a>{" and "} 
+            <a href="https://www.chartjs.org/">ChartJs</a></p>
+          </div>
         </nav>
     )
   }
