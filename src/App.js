@@ -6,10 +6,6 @@ import Map from './components/Map'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends React.Component {
-  constructor(){
-    super()
-  }
-
   render() {
     return (
       <Router>

@@ -34,11 +34,27 @@ body{
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
-.left{
-  display:grid;
-  grid-column: 1;
+.navbar{
   box-shadow: 0 0 0 1px white, 0 2px 4px 1px rgba(0,0,0,.18);
   background-color: white;
+  position:fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15%;
+}
+.navbar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar li{
+  padding: 10px 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.navbar li:hover{
+  background-color: lightgray;
 }
 .card-row{
   display: grid;
@@ -65,6 +81,11 @@ body{
 }
 .header h1{
   text-align: left;
+}
+.count{
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 .autocomplete{
   width: 100%;
@@ -101,24 +122,6 @@ body{
   background-color: lightgray;
   text-decoration: underline;
 }
-.sidenavbar{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.sidenavbar ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.sidenavbar li{
-  padding: 10px 5px;
-  cursor: pointer;
-  text-decoration: none;
-}
-.sidenavbar li:hover{
-  background-color: lightgray;
-}
 
 .card{
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
@@ -127,6 +130,13 @@ body{
   border: 1px solid black;
   border-radius: 10px;
   background-color: white;
+  text-align: left;
+}
+.card h2{
+  margin-bottom: 10px;
+}
+.card div{
+  margin-top: 10px;
 }
 
 .graph{
@@ -138,7 +148,14 @@ body{
   border-radius: 10px;
   background-color: white;
 }
-
+.menu{
+  width: 60%;
+  display: none;
+  padding: 10px;
+}
+#close{
+  display: none;
+}
 .red{
   border: 3px solid rgba(255,0,0);
 }
@@ -163,12 +180,39 @@ body{
   .App{
     display: grid;
     background-color: aliceblue;
+    grid-template-columns: 5% 90% 5%;
+    grid-column-gap: 0px;
   }
   .center{
     display: grid;
   }
   .countrystats{
     display: grid;
+  }
+  .navbar{
+    display: none;
+  }
+  .graph{
+    width: 42vw;
+  }
+  .menu{
+    display: block;
+    background-color: grey;
+  }
+  .menu:hover{
+    cursor: pointer;
+    background-color: white;
+  }
+  #close{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 5px;
+  }
+  #close:hover{
+    cursor: pointer;
   }
 }
 

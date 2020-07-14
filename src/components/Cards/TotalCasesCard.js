@@ -13,7 +13,7 @@ class TotalCasesCard extends React.Component {
     return (
         <div className="card orange">
           <h2>Total Cases Confirmed</h2>
-          <h1 style={{color: "rgba(255,128,0)"}}>{totalConfirmed}</h1>
+          <span className="count" style={{color: "rgba(255,128,0)"}}>{totalConfirmed}</span>
           <div>{newConfirmed} New Cases</div>
         </div>
     )

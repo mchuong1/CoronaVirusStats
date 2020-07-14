@@ -15,13 +15,14 @@ class CountryStats extends React.Component {
 			super()
 			this.state = {
 					data: [],
-					country: 'United States of America',
+          country: 'United States of America',
+          slug: 'united-states',
 					countries: []
 			}
 			this.getCountryStats = this.getCountryStats.bind(this)
 	}
   componentDidMount() {
-    getDayOneTotalAllStatus("united-states")
+    getDayOneTotalAllStatus(this.state.slug)
     .then(response => this.setState({data: response}))
     .catch(err => console.log(err))
 
@@ -31,7 +32,7 @@ class CountryStats extends React.Component {
   }
   getCountryStats(event){
     getDayOneTotalAllStatus(event.Slug)
-    .then(response => this.setState({data: response, country: event.Country}))
+    .then(response => this.setState({data: response, country: event.Country, slug: event.Slug}))
     .catch(err => console.log(err))
   }
 

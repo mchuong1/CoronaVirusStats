@@ -13,7 +13,7 @@ class TotalActiveCard extends React.Component {
     return (
         <div className="card red">
           <h2>Total Active</h2>
-          <h1 style={{color:'red'}}>{totalActive}</h1>
+          <span className="count" style={{color:'red'}}>{totalActive}</span>
           <div>{newActive} New Active</div>
         </div>
     )
