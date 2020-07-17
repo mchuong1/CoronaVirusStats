@@ -12,9 +12,9 @@ class TotalRecoveredCard extends React.Component {
     }
     return (
         <div className="card green">
-          <h2>Total Recovered</h2>
+          <div className="title">Total Recovered</div>
           <span className="count" style={{color: "rgba(0,204,0)"}}>{totalRecovered}</span>
-          <div>{newRecovered} New Recovered</div>
+          <div className="newcount">{newRecovered} New Recovered</div>
         </div>
     )
   }

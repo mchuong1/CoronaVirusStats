@@ -82,6 +82,11 @@ body{
 .header h1{
   text-align: left;
 }
+.title{
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
 .count{
   font-size: 32px;
   font-weight: 700;
@@ -176,10 +181,9 @@ body{
   border: 3px solid rgba(153,0,0);
 }
 
-@media (max-width: 1200px){
+@media (max-width: 991px){
   .App{
     display: grid;
-    background-color: aliceblue;
     grid-template-columns: 5% 90% 5%;
     grid-column-gap: 0px;
   }
@@ -215,7 +219,58 @@ body{
     cursor: pointer;
   }
 }
-
+@media(max-width: 479px){
+  .App{
+    background-color: aliceblue;
+    width: 100vw;
+    height: 100vh;
+  }
+  .countrystats{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 20px;
+  } 
+  .header{
+    display:grid;
+    grid-column: 1;
+    margin-top: 30px;
+  }
+  .card-row{
+    display: grid;
+    grid-column: 1;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  } 
+  .column-1{
+    display: grid;
+    grid-column: 1;
+    height: fit-content;
+    grid-row-gap: 20px;
+  }
+  .column-2{
+    display: grid;
+    grid-column: 1;
+    height: fit-content;
+    grid-row-gap: 20px;
+  }
+  .card{
+    height: 114px;
+  }
+  .graph{
+    width: 83vw;
+  }
+  .title{
+    font-size: 14px;
+  }
+  .count{
+    font-size: 20px;
+  }
+  .newcount{
+    font-size: 10px;
+  }
+}
 @media (orientation: landscape){
 
 }

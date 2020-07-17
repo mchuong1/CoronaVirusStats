@@ -23,7 +23,7 @@ class ActiveCaseGraph extends React.Component {
         }
         return (
         <div className="graph red">
-            <h3>Daily Active Cases: {cases[cases.length-1]}</h3>
+            <h3 className="title">Daily Active Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
             height={50}
