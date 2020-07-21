@@ -25,7 +25,7 @@ class NewCasesGraph extends React.Component {
         }
         return (
         <div className="graph orange">
-            <h3>Daily New Cases: {cases[cases.length-1]}</h3>
+            <h3 className="title">Daily New Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
             height={50}
@@ -34,7 +34,7 @@ class NewCasesGraph extends React.Component {
                 datasets: [
                     {
                         label: 'New',
-                        backgroundColor: 'rgba(255,128,0)',
+                        backgroundColor: '#facf5a',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
                         pointRadius: 1,

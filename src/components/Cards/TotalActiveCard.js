@@ -1,4 +1,5 @@
 import React from "react";
+import active from '../../img/Active.png'
 
 class TotalActiveCard extends React.Component {
 
@@ -12,6 +13,7 @@ class TotalActiveCard extends React.Component {
     }
     return (
         <div className="card red">
+          <img alt="" src={active} className="icon"></img>
           <div className="title">Total Active</div>
           <span className="count" style={{color:'red'}}>{totalActive}</span>
           <div className="newcount">{newActive} New Active</div>

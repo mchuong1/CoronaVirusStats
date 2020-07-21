@@ -1,4 +1,5 @@
 import React from "react";
+import rip from '../../img/rip.png'
 
 class TotalDeathsCard extends React.Component {
 
@@ -11,9 +12,10 @@ class TotalDeathsCard extends React.Component {
       newDeaths = totalDeaths - data[data.length-2].Deaths
     }
     return (
-        <div className="card darkred">
+        <div className="card darkgreen">
+          <img alt="" src={rip} className="icon"></img>
           <div className="title">Total Deaths</div>
-          <span className="count" style={{color: "rgba(153,0,0)"}}>{totalDeaths}</span>
+          <span className="count" style={{color: "#085f63"}}>{totalDeaths}</span>
           <div className="newcount">{newDeaths} New Deaths</div>
         </div>
     )

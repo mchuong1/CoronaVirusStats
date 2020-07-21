@@ -24,7 +24,7 @@ class RecoveredGraph extends React.Component {
         }
         return (
         <div className="graph green">
-            <h3>Daily Recovered Cases: {cases[cases.length-1]}</h3>
+            <h3 className="title">Daily Recovered Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
             height={50}
@@ -33,7 +33,7 @@ class RecoveredGraph extends React.Component {
                 datasets: [
                     {
                         label: 'Recovered',
-                        backgroundColor: 'rgba(0,204,0)',
+                        backgroundColor: '#49beb7',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
                         pointRadius: 1,

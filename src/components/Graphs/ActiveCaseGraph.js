@@ -32,7 +32,7 @@ class ActiveCaseGraph extends React.Component {
                 datasets: [
                     {
                         label: 'New',
-                        backgroundColor: 'rgba(255,0,0)',
+                        backgroundColor: '#ff5959',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
                         pointRadius: 1,

@@ -23,8 +23,8 @@ class DeathGraph extends React.Component {
             }
         }
         return (
-        <div className="graph darkred">
-            <h3>Daily Death Cases: {cases[cases.length-1]}</h3>
+        <div className="graph darkgreen">
+            <h3 className="title">Daily Death Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
             height={50}
@@ -33,7 +33,7 @@ class DeathGraph extends React.Component {
                 datasets: [
                     {
                         label: 'Deaths',
-                        backgroundColor: 'rgba(153,0,0)',
+                        backgroundColor: '#085f63',
                         borderColor: 'rgba(0,0,0,1)',
                         borderWidth: 2,
                         pointRadius: 1,

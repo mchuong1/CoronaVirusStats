@@ -40,8 +40,8 @@ class CountryStats extends React.Component {
     return (
         <div className="countrystats">
             <div className="header">
-              <h1>{this.state.country}</h1>
               <CountryList countries={this.state.countries} getCountryStats={this.getCountryStats}/>
+              <h1 style={{marginBottom: 0}}>{this.state.country}</h1>
             </div>
             <div className="card-row">
               <TotalCasesCard data={this.state.data}/>

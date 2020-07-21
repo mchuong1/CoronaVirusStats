@@ -1,4 +1,5 @@
 import React from "react";
+import recovered from '../../img/recovered.png'
 
 class TotalRecoveredCard extends React.Component {
 
@@ -12,6 +13,7 @@ class TotalRecoveredCard extends React.Component {
     }
     return (
         <div className="card green">
+          <img alt="" src={recovered} className="icon"></img>
           <div className="title">Total Recovered</div>
           <span className="count" style={{color: "rgba(0,204,0)"}}>{totalRecovered}</span>
           <div className="newcount">{newRecovered} New Recovered</div>
