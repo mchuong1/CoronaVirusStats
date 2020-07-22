@@ -144,7 +144,7 @@ body{
   background-color: white;
   text-align: left;
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 30% 1fr;
   grid-column-gap: 20px;
 }
 .card h2{
@@ -236,9 +236,8 @@ body{
 }
 @media(max-width: 479px){
   .App{
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     width: 100vw;
-    height: 100vh;
   }
   .countrystats{
     display: grid;
@@ -249,7 +248,7 @@ body{
   .header{
     display:grid;
     grid-column: 1;
-    margin-top: 30px;
+    margin-top: 40px;
   }
   .card-row{
     display: grid;
@@ -284,6 +283,9 @@ body{
   }
   .newcount{
     font-size: 10px;
+  }
+  .icon{
+    height: 40px;
   }
 }
 @media (orientation: landscape){
