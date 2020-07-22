@@ -1,5 +1,6 @@
 import React from "react";
 import virus from '../../img/virus.png'
+import { addComma } from '../../resource/Common'
 
 class TotalCasesCard extends React.Component {
 
@@ -11,6 +12,8 @@ class TotalCasesCard extends React.Component {
       totalConfirmed = data[data.length-1].Confirmed
       newConfirmed = totalConfirmed - data[data.length-2].Confirmed
     }
+    totalConfirmed = addComma(totalConfirmed)
+    newConfirmed = addComma(newConfirmed)
     return (
         <div className="card orange">
           <img alt="" src={virus} className="icon"></img>

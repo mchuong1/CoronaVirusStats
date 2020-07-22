@@ -1,5 +1,6 @@
 import React from "react";
 import recovered from '../../img/recovered.png'
+import { addComma } from '../../resource/Common'
 
 class TotalRecoveredCard extends React.Component {
 
@@ -11,6 +12,8 @@ class TotalRecoveredCard extends React.Component {
       totalRecovered = data[data.length-1].Recovered
       newRecovered = totalRecovered - data[data.length-2].Recovered
     }
+    totalRecovered = addComma(totalRecovered)
+    newRecovered = addComma(newRecovered)
     return (
         <div className="card green">
           <img alt="" src={recovered} className="icon"></img>

@@ -1,5 +1,6 @@
 import React from "react";
 import rip from '../../img/rip.png'
+import { addComma } from '../../resource/Common'
 
 class TotalDeathsCard extends React.Component {
 
@@ -11,6 +12,8 @@ class TotalDeathsCard extends React.Component {
       totalDeaths = data[data.length-1].Deaths
       newDeaths = totalDeaths - data[data.length-2].Deaths
     }
+    totalDeaths = addComma(totalDeaths)
+    newDeaths = addComma(newDeaths)
     return (
         <div className="card darkgreen">
           <img alt="" src={rip} className="icon"></img>

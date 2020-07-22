@@ -24,7 +24,7 @@ class RecoveredGraph extends React.Component {
         }
         return (
         <div className="graph green">
-            <h3 className="title">Daily Recovered Cases: {cases[cases.length-1]}</h3>
+            <h3 className="title-graph">Daily Recovered Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
             height={50}

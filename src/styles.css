@@ -88,6 +88,12 @@ body{
   margin-bottom: 10px;
   grid-column: 2;
 }
+.title-graph{
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 10px;
+  grid-column: 2;
+}
 .count{
   font-size: 32px;
   font-weight: 700;
@@ -253,7 +259,7 @@ body{
   .card-row{
     display: grid;
     grid-column: 1;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
   } 
@@ -276,7 +282,7 @@ body{
     width: 83vw;
   }
   .title{
-    font-size: 14px;
+    font-size: 12px;
   }
   .count{
     font-size: 20px;
@@ -284,9 +290,13 @@ body{
   .newcount{
     font-size: 10px;
   }
-  .icon{
-    height: 40px;
+  .title-graph{
+    font-size: 12px;
+    margin-bottom: -20px;
   }
+  /* .icon{
+    height: 40px;
+  } */
 }
 @media (orientation: landscape){
 

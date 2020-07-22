@@ -1,5 +1,6 @@
 import React from "react";
 import active from '../../img/Active.png'
+import { addComma } from '../../resource/Common'
 
 class TotalActiveCard extends React.Component {
 
@@ -11,6 +12,8 @@ class TotalActiveCard extends React.Component {
       totalActive = data[data.length-1].Active
       newActive = totalActive - data[data.length-2].Active
     }
+    newActive = addComma(newActive)
+    totalActive = addComma(totalActive)
     return (
         <div className="card red">
           <img alt="" src={active} className="icon"></img>

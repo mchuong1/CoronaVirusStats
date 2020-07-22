@@ -23,7 +23,7 @@ class ConfirmedGraph extends React.Component {
         })
         return (
         <div className="graph orange">
-            <h3 className="title">Total Confirmed Cases: {cases[cases.length-1]}</h3>
+            <h3 className="title-graph">Total Confirmed Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
             height={50}

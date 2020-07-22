@@ -24,7 +24,7 @@ class DeathGraph extends React.Component {
         }
         return (
         <div className="graph darkgreen">
-            <h3 className="title">Daily Death Cases: {cases[cases.length-1]}</h3>
+            <h3 className="title-graph">Daily Death Cases: {cases[cases.length-1]}</h3>
             <Line
             width={100}
             height={50}
