@@ -34,6 +34,31 @@ body{
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
+.tab{
+  /* width: 100%; */
+  width: fit-content;
+  background-color: white;
+  box-shadow: 0 0 0 1px white, 0 2px 4px 1px rgba(0,0,0,.18);
+  border-radius: 20px;
+}
+.tab ul{
+  list-style-type: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  width: fit-content;
+  margin: 0;
+}
+.tab a{
+  padding: 10px;
+  /* border-right: 1px solid lightgray; */
+}
+.tab a:hover{
+  background-color: lightgray;
+}
+.tab a:active{
+  background-color: lightgray;
+}
 .navbar{
   box-shadow: 0 0 0 1px white, 0 2px 4px 1px rgba(0,0,0,.18);
   background-color: white;
