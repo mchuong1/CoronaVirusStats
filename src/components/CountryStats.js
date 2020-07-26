@@ -9,6 +9,7 @@ import TotalCasesCard from './Cards/TotalCasesCard'
 import TotalRecoveredCard from './Cards/TotalRecoveredCard'
 import TotalDeathsCard from './Cards/TotalDeathsCard'
 import TotalActiveCard from './Cards/TotalActiveCard'
+import Tab from './Tab'
 
 class CountryStats extends React.Component {
 	constructor(){
@@ -49,15 +50,7 @@ class CountryStats extends React.Component {
               <TotalRecoveredCard data={this.state.data}/>
               <TotalDeathsCard data={this.state.data}/>
             </div>
-            <div className="tab">
-              <ul>
-                <a style={{borderTopLeftRadius:'20px',borderBottomLeftRadius:'20px' }}>All</a>
-                <a>New</a>
-                <a>Active</a>
-                <a>Recovered</a>
-                <a style={{borderTopRightRadius:'20px',borderBottomRightRadius:'20px' }}>Deaths</a>
-              </ul>
-            </div>
+            <Tab />
             <div className='column-1'>
               <NewCasesGraph data={this.state.data}/>
               <ActiveCaseGraph data={this.state.data}/>

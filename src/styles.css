@@ -51,14 +51,13 @@ body{
 }
 .tab a{
   padding: 10px;
+  cursor: pointer;
   /* border-right: 1px solid lightgray; */
 }
 .tab a:hover{
   background-color: lightgray;
 }
-.tab a:active{
-  background-color: lightgray;
-}
+
 .navbar{
   box-shadow: 0 0 0 1px white, 0 2px 4px 1px rgba(0,0,0,.18);
   background-color: white;

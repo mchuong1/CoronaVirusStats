@@ -3,3 +3,4 @@ node_modules
 .fake
 .ionide
 package-lock.json
+.vscode
