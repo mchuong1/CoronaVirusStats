@@ -4,3 +4,4 @@ node_modules
 .ionide
 package-lock.json
 .vscode
+build

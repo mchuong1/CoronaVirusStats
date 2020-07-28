@@ -2,7 +2,7 @@ import React from "react"
 import "./styles.css"
 import CountryStats from './components/CountryStats'
 import SideNaveBar from './components/SideNavBar'
-import Map from './components/Map'
+import World from './components/World'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends React.Component {
@@ -15,8 +15,8 @@ class App extends React.Component {
           </div>
           <div className="center">
             <Switch>
-              <Route path="/" exact component={CountryStats}/>
-              {/* <Route path="/Map" component={Map}/> */}
+              {/* <Route exact path="/CoronaVirusStats" component={World}/> */}
+              <Route path="/CoronaVirusStats/Country"  component={CountryStats}/>
             </Switch>
           </div>
           <div className="right">            

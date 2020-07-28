@@ -7,10 +7,9 @@ class CountryList extends React.Component {
       suggestions: [],
       text: ''
     }
-    this.filterCountries = this.filterCountries.bind(this)
   }
 
-  filterCountries(event){
+  filterCountries = (event) => {
     var value = event.target.value
     var suggestions = []
     var { countries } = this.props
@@ -23,7 +22,7 @@ class CountryList extends React.Component {
 
   renderSuggestions(){
     var { suggestions } = this.state
-    if(suggestions.length === 0) return null
+    if(suggestions.length === 0) return suggestions
     return (
       <ul>
         {suggestions.map((item) => <li key={suggestions.ISO2} onClick={() => this.suggestionSelected(item)}>{item.Country}</li>)}
