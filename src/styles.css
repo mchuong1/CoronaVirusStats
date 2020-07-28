@@ -325,6 +325,9 @@ body{
     font-size: 12px;
     margin-bottom: -20px;
   }
+  .tab{
+    display: none;
+  }
   /* .icon{
     height: 40px;
   } */
