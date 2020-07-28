@@ -57,7 +57,14 @@ body{
 .tab a:hover{
   background-color: lightgray;
 }
-
+#alltab{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+#deathtab{
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 .navbar{
   box-shadow: 0 0 0 1px white, 0 2px 4px 1px rgba(0,0,0,.18);
   background-color: white;

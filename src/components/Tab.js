@@ -8,24 +8,30 @@ class Tab extends React.Component {
     }
     this.switchTab = this.switchTab.bind(this)
   }
+
   switchTab(event){
     var tabitems = document.getElementsByClassName("tabitem");
-    for(var item in tabitems){
-        if(item.style.backgroundColor === "lightgray")
-        item.style.backgroundColor = "white"
+    var newgraph
+    for(var i = 0; i < tabitems.length; i++){
+        if(tabitems[i].style.backgroundColor === "lightgray")
+        tabitems[i].style.backgroundColor = "white"
     }
     event.target.style.backgroundColor = "lightgray"
+    if(event.target.text === "New"){
+      newgraph = document.getElementById("newgraph")
+      
+    }
   }
 
   render() {
     return (
         <div className="tab">
             <ul>
-                <a className="tabitem" onClick={this.switchTab} style={{borderTopLeftRadius:'20px',borderBottomLeftRadius:'20px' }}>All</a>
+                <a id="alltab" className="tabitem" onClick={this.switchTab}>All</a>
                 <a className="tabitem" onClick={this.switchTab}>New</a>
                 <a className="tabitem" onClick={this.switchTab}>Active</a>
                 <a className="tabitem" onClick={this.switchTab}>Recovered</a>
-                <a className="tabitem" onClick={this.switchTab} style={{borderTopRightRadius:'20px',borderBottomRightRadius:'20px' }}>Deaths</a>
+                <a id="deathtab" className="tabitem" onClick={this.switchTab}>Deaths</a>
             </ul>
         </div>
     )
