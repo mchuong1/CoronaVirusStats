@@ -1,7 +1,7 @@
 {
   "name": "coronavirustracker",
   "version": "1.0.0",
-  "homepage": "http://mchuong1.github.io/CoronaVirusStats",
+  "homepage": "https://app.herokuapp.com/",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
