@@ -95,6 +95,12 @@ body{
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 20px;
 }
+.world-card-row{
+  display: grid;
+  grid-column: 1 / span 2;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+}
 .column-1{
   grid-column: 1;
   display: grid;
@@ -178,7 +184,6 @@ body{
 .card{
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
   height:121px;
-  width:274.594px;
   padding: 10px;
   border: 1px solid black;
   border-radius: 10px;

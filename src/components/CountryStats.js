@@ -22,7 +22,15 @@ class CountryStats extends React.Component {
           newCases: [],
           recoveredCases: [],
           deathCases: [],
-          dates: []
+          dates: [],
+          newActive: '',
+          totalActive: '',
+          newConfirmed: '',
+          totalConfirmed: '',
+          newRecovered: '',
+          totalRecovered: '',
+          newDeath: '',
+          totalDeath: ''
 			}
   }
   componentDidMount() {
@@ -34,6 +42,7 @@ class CountryStats extends React.Component {
       this.getDailyNewCases()
       this.getDailyRecoveredCases()
       this.getDailyDeathCases()
+      this.getTotalandNewCases()
     })
     .catch(err => console.log(err))
 
@@ -105,6 +114,19 @@ class CountryStats extends React.Component {
     }
     this.setState({deathCases: cases})
   }
+  getTotalandNewCases = () => {
+    var { data } = this.state
+    this.setState({
+      totalActive: data[data.length-1].Active,
+      totalConfirmed: data[data.length-1].Confirmed,
+      totalRecovered: data[data.length-1].Recovered,
+      totalDeath: data[data.length-1].Deaths,
+      newActive: data[data.length-1].Active - data[data.length-2].Active,
+      newConfirmed: data[data.length-1].Confirmed - data[data.length-2].Confirmed,
+      newRecovered: data[data.length-1].Recovered - data[data.length-2].Recovered,
+      newDeath: data[data.length-1].Deaths - data[data.length-2].Deaths
+    })
+  }
 
   render() {
     return (
@@ -114,10 +136,10 @@ class CountryStats extends React.Component {
               <h1>{this.state.country}</h1>
             </div>
             <div className="card-row">
-              <TotalCasesCard data={this.state.data}/>
-              <TotalActiveCard data={this.state.data}/>
-              <TotalRecoveredCard data={this.state.data}/>
-              <TotalDeathsCard data={this.state.data}/>
+              <TotalCasesCard totalConfirmed={this.state.totalConfirmed} newConfirmed={this.state.newConfirmed}/>
+              <TotalActiveCard totalActive={this.state.totalActive} newActive={this.state.newActive}/>
+              <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
+              <TotalDeathsCard totalDeath={this.state.totalDeath} newDeath={this.state.newDeath}/>
             </div>
             <div className='column-1'>
               <NewCasesGraph data={this.state.newCases} dates={this.state.dates}/>

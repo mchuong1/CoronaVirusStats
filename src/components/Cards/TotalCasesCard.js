@@ -5,13 +5,7 @@ import { addComma } from '../../resource/Common'
 class TotalCasesCard extends React.Component {
 
   render() {
-    var { data } = this.props
-    var totalConfirmed
-    var newConfirmed
-    if(data[1]){
-      totalConfirmed = data[data.length-1].Confirmed
-      newConfirmed = totalConfirmed - data[data.length-2].Confirmed
-    }
+    var { totalConfirmed, newConfirmed } = this.props
     totalConfirmed = addComma(totalConfirmed)
     newConfirmed = addComma(newConfirmed)
     return (
