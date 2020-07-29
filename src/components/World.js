@@ -39,7 +39,7 @@ class World extends React.Component {
     return (
         <div className="world">
             <div className="header">
-              <h1>World</h1>
+              <h1>World Statistics</h1>
             </div>
             <div className="world-card-row">
               <TotalCasesCard totalConfirmed={this.state.totalConfirmed} newConfirmed={this.state.newConfirmed}/>
