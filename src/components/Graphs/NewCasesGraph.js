@@ -14,7 +14,7 @@ class NewCasesGraph extends React.Component {
         var { data, dates } = this.props
         return (
         <div id="New" className="graph orange">
-            <h3 className="title-graph">Daily New Cases: {data[data.length-1]}</h3>
+            <h3 className="title-graph">Daily New Cases</h3>
             <Line
             width={100}
             height={50}
