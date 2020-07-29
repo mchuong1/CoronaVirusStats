@@ -33,12 +33,14 @@ body{
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+  grid-template-rows: 125.438px 147px 38px 782px;
 }
 .tab{
   /* width: 100%; */
   width: fit-content;
   background-color: white;
   box-shadow: 0 0 0 1px white, 0 2px 4px 1px rgba(0,0,0,.18);
+  height: 38px;
   border-radius: 20px;
 }
 .tab ul{
@@ -139,6 +141,7 @@ body{
   border: 1px solid grey;
   border-radius: 5px;
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+  height: fit-content;
 }
 .autocomplete input{
   width: 100%;
@@ -174,7 +177,8 @@ body{
 
 .card{
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
-  /* height: 143px; */
+  height:121px;
+  width:274.594px;
   padding: 10px;
   border: 1px solid black;
   border-radius: 10px;
@@ -199,6 +203,10 @@ body{
   border: 1px solid black;
   border-radius: 10px;
   background-color: white;
+}
+.active{
+  height:515.344px;
+  width:1190.39px;
 }
 .menu{
   width: 60%;

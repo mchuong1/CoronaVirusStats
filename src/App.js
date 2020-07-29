@@ -15,8 +15,8 @@ class App extends React.Component {
           </div>
           <div className="center">
             <Switch>
-              {/* <Route exact path="/CoronaVirusStats" component={World}/> */}
-              <Route path="/CoronaVirusStats/Country"  component={CountryStats}/>
+              <Route exact path="/" component={World}/>
+              <Route path="/Country"  component={CountryStats}/>
             </Switch>
           </div>
           <div className="right">            

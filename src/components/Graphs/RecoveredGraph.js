@@ -12,7 +12,7 @@ class RecoveredGraph extends React.Component {
     render() {
         var { data, dates } = this.props
         return (
-        <div className="graph green">
+        <div id="Recovered" className="graph green">
             <h3 className="title-graph">Daily Recovered Cases: {data[data.length-1]}</h3>
             <Line
             width={100}

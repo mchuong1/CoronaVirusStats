@@ -11,16 +11,28 @@ class Tab extends React.Component {
 
   switchTab(event){
     var tabitems = document.getElementsByClassName("tabitem");
-    var newgraph
+    var graphs = document.getElementsByClassName("graph")
+    var { text, style } = event.target
+    var targetGraph = document.getElementById(text);
     for(var i = 0; i < tabitems.length; i++){
-        if(tabitems[i].style.backgroundColor === "lightgray")
         tabitems[i].style.backgroundColor = "white"
     }
-    event.target.style.backgroundColor = "lightgray"
-    if(event.target.text === "New"){
-      newgraph = document.getElementById("newgraph")
-      
+    if(text !== "All"){
+      for(var i = 0; i < graphs.length; i++){
+        graphs[i].style.display = "none"
+      }
+      targetGraph.style.display = "block"
+      targetGraph.className += " active"
+    } 
+    else {
+      for(var i = 0; i < graphs.length; i++){
+        graphs[i].style.display = "block"
+        if(graphs[i].className.indexOf("active") > 1){
+          graphs[i].className = graphs[i].className.replace("active", "")
+        }
+      }
     }
+    style.backgroundColor = "lightgray"
   }
 
   render() {
@@ -36,8 +48,6 @@ class Tab extends React.Component {
         </div>
     )
   }
-
-  componentDidMount() {}
 }
 
 export default Tab;

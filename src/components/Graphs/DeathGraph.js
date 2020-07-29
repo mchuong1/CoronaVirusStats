@@ -12,7 +12,7 @@ class DeathGraph extends React.Component {
     render() {
         var { data, dates } = this.props
         return (
-        <div className="graph darkgreen">
+        <div id="Deaths" className="graph darkgreen">
             <h3 className="title-graph">Daily Death Cases: {data[data.length-1]}</h3>
             <Line
             width={100}
