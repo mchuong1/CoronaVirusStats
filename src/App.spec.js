@@ -4,6 +4,7 @@ import { act } from "react-dom/test-utils";
 import TotalCasesCard from './components/Cards/TotalCasesCard';
 import TotalDeathsCard from './components/Cards/TotalDeathsCard';
 import TotalRecoveredCard from './components/Cards/TotalRecoveredCard';
+import TotalActiveCard from './components/Cards/TotalActiveCard';
 
 let container = null;
 beforeEach(() => {
@@ -51,21 +52,28 @@ var stubdata = [
 
 it("TotalCasesCard renders with a number", () => {
   act(() => {
-    render(<TotalCasesCard data={stubdata}/>, container);
+    render(<TotalCasesCard totalConfirmed={1} newConfirmed={0}/>, container);
   });
-  expect(container.textContent).toBe("Total Cases Confirmed10 New Cases");
+  expect(container.textContent).toBe("Total Confirmed10 New Cases");
 });
 
-it("TotalRecoveredctiveCard renders with a number", () => {
+it("TotalActiveCard renders with a number", () => {
   act(() => {
-    render(<TotalRecoveredCard data={stubdata}/>, container);
+    render(<TotalActiveCard totalActive={0} newActive={0}/>, container);
+  });
+  expect(container.textContent).toBe("Total Active00 New Active");
+})
+
+it("TotalRecoveredeCard renders with a number", () => {
+  act(() => {
+    render(<TotalRecoveredCard totalRecovered={0} newRecovered={0}/>, container);
   });
   expect(container.textContent).toBe("Total Recovered00 New Recovered");
 });
 
 it("TotalDeathsCard renders with a number", () =>{
   act(()=> {
-    render(<TotalDeathsCard data={stubdata}/>, container);
+    render(<TotalDeathsCard totalDeaths={0} newDeaths={0}/>, container);
   });
   expect(container.textContent).toBe("Total Deaths00 New Deaths")
 })

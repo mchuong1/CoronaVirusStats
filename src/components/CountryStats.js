@@ -139,7 +139,7 @@ class CountryStats extends React.Component {
               <TotalCasesCard totalConfirmed={this.state.totalConfirmed} newConfirmed={this.state.newConfirmed}/>
               <TotalActiveCard totalActive={this.state.totalActive} newActive={this.state.newActive}/>
               <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
-              <TotalDeathsCard totalDeath={this.state.totalDeath} newDeath={this.state.newDeath}/>
+              <TotalDeathsCard totalDeaths={this.state.totalDeath} newDeaths={this.state.newDeath}/>
             </div>
             <div className='column-1'>
               <NewCasesGraph data={this.state.newCases} dates={this.state.dates}/>
