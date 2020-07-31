@@ -54,13 +54,23 @@ class CountryStats extends React.Component {
   getCountryStats = (event) => {
     getDayOneTotalAllStatus(event.Slug)
     .then(response => this.setState({data: response, country: event.Country, slug: event.Slug}))
+    .then(() => {
+      this.getDates()
+      this.getDailyActiveCases()
+      this.getDailyNewCases()
+      this.getDailyRecoveredCases()
+      this.getDailyDeathCases()
+      this.getTotalandNewCases()
+    })
     .catch(err => console.log(err))
   }
   getDates = () => {
     var { data, dates } = this.state
+    var tempdates = []
     data.forEach(item =>{
-      dates.push(transformISODate(item.Date))
+      tempdates.push(transformISODate(item.Date))
     })
+    this.setState({dates:tempdates})
   }
   getDailyActiveCases = () => {
     var { data } = this.state

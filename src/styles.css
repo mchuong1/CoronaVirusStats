@@ -101,6 +101,9 @@ body{
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
 }
+.world-header{
+  text-align: left;
+}
 .column-1{
   grid-column: 1;
   display: grid;
@@ -120,6 +123,8 @@ body{
 }
 .header h1{
   text-align: left;
+  position: absolute;
+  top: 65px;
 }
 .title{
   font-weight: bold;
@@ -148,6 +153,7 @@ body{
   border-radius: 5px;
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
   height: fit-content;
+  z-index: 1;
 }
 .autocomplete input{
   width: 100%;

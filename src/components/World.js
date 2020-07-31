@@ -38,13 +38,13 @@ class World extends React.Component {
   render() {
     return (
         <div className="world">
-            <div className="header">
+            <div className="world-header">
               <h1>World Statistics</h1>
             </div>
             <div className="world-card-row">
               <TotalCasesCard totalConfirmed={this.state.totalConfirmed} newConfirmed={this.state.newConfirmed}/>
               <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
-              <TotalDeathsCard totalDeath={this.state.totalDeaths} newDeath={this.state.newDeaths}/>
+              <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
             </div>
         </div>
     )
