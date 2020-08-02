@@ -65,7 +65,7 @@ class CountryStats extends React.Component {
     .catch(err => console.log(err))
   }
   getDates = () => {
-    var { data, dates } = this.state
+    var { data } = this.state
     var tempdates = []
     data.forEach(item =>{
       tempdates.push(transformISODate(item.Date))

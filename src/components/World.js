@@ -3,6 +3,7 @@ import { getSummary } from "../resource/covid19"
 import TotalCasesCard from './Cards/TotalCasesCard'
 import TotalRecoveredCard from './Cards/TotalRecoveredCard'
 import TotalDeathsCard from './Cards/TotalDeathsCard'
+import Map from './Map'
 
 class World extends React.Component {
 	constructor(){
@@ -45,6 +46,9 @@ class World extends React.Component {
               <TotalCasesCard totalConfirmed={this.state.totalConfirmed} newConfirmed={this.state.newConfirmed}/>
               <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
               <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
+            </div>
+            <div>
+              <Map />
             </div>
         </div>
     )

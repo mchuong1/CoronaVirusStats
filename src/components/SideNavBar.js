@@ -17,7 +17,7 @@ class SideNavBar extends React.Component {
             <h2>Coronavirus Stats</h2>
             <ul>
                 <Link to="/" style={{textDecoration: 'none', color: "black"}}>
-                <li>World</li>
+                <li>World Statistics</li>
                 </Link>
                 <Link to="/Country" style={{textDecoration: 'none', color: "black"}}>
                 <li>Lookup by Country</li>
