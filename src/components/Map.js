@@ -15,6 +15,7 @@ class Map extends React.Component{
                 mapsApiKey={googlemaps_apikey}
                 options={{
                     colorAxis: { colors: ['#49BEB7', '#FACF5A', '#FF5959'] },
+                    datalessRegionColor: '#085F63'
                 }}
                 />
             </div>

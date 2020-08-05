@@ -61,7 +61,7 @@ class World extends React.Component {
         case 'Iran, Islamic Republic of':
           country.Country = 'Iran';
           break;
-        case '"Taiwan, Republic of China"':
+        case "Taiwan, Republic of China":
           country.Country = 'Taiwan';
           break;
         case 'Venezuela (Bolivarian Republic)':
@@ -69,6 +69,24 @@ class World extends React.Component {
           break;
         case "Syrian Arab Republic (Syria)":
           country.Country = 'Syria';  
+          break;
+        case "Côte d'Ivoire":
+          country.Country = "CI"
+          break;
+        case "Korea (South)":
+          country.Country = "South Korea"
+          break;
+        case "Korea (North)":
+          country.Country = "North Korea"
+          break;
+        case "Congo (Kinshasa)":
+          country.Country = "CD"
+          break;
+        case "Congo (Brazzaville)":
+          country.Country = "CG"
+          break;
+        case "South Sudan":
+          country.Country = "SS"
           break;
         default:
           break;
