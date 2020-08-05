@@ -6,6 +6,7 @@ class Map extends React.Component{
     render(){
         return(
             <div className="map darkgreen">
+                <h2>Total Confirmed GeoChart</h2>
                 <Chart 
                 width={'1200px'}
                 height={'600px'}
