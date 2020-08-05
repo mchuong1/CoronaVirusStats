@@ -91,7 +91,7 @@ class World extends React.Component {
               <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
             </div>
             <div>
-              <h1 style={{textAlign: 'left', marginTop: 0}}>Total Cases</h1>
+              <h1 style={{textAlign: 'left', marginTop: 0}}>Total Confirmed</h1>
               <Map data={this.state.data}/>
             </div>
         </div>
