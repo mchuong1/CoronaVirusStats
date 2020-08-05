@@ -33,7 +33,50 @@ class World extends React.Component {
         totalDeaths: Global.TotalDeaths
       })
     })
+    .then(this.createGeoData)
     .catch(err => console.log(err))
+  }
+
+  createGeoData = () => {
+    var { Countries } = this.state.worlddata
+    var tempdata = [['Country', 'Confirmed']]
+    var temp
+    Countries.forEach(country => {
+      switch(country.Country){
+        case 'United States of America': 
+          country.Country = 'United States';
+          break;
+        case 'Viet Nam': 
+          country.Country = 'Vietnam';
+          break;
+        case 'Russian Federation':
+          country.Country = 'RU';
+          break;
+        case 'Tanzania, United Republic of':
+          country.Country = 'Tanzania';
+          break;
+        case 'Lao PDR':
+          country.Country = 'Laos';
+          break;
+        case 'Iran, Islamic Republic of':
+          country.Country = 'Iran';
+          break;
+        case '"Taiwan, Republic of China"':
+          country.Country = 'Taiwan';
+          break;
+        case 'Venezuela (Bolivarian Republic)':
+          country.Country = 'Venezuela';
+          break;
+        case "Syrian Arab Republic (Syria)":
+          country.Country = 'Syria';  
+          break;
+        default:
+          break;
+      }
+      temp = [country.Country, country.TotalConfirmed]
+      tempdata.push(temp)
+    });
+    this.setState({data: tempdata})
   }
 
   render() {
@@ -48,7 +91,8 @@ class World extends React.Component {
               <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
             </div>
             <div>
-              <Map />
+              <h1 style={{textAlign: 'left', marginTop: 0}}>Total Cases</h1>
+              <Map data={this.state.data}/>
             </div>
         </div>
     )

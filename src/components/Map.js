@@ -4,24 +4,18 @@ import googlemaps_apikey from '../resource/key.json'
 
 class Map extends React.Component{
     
-
     render(){
         return(
-            <div className="map">
+            <div className="map darkgreen">
                 <Chart 
                 width={'1200px'}
                 height={'600px'}
                 chartType="GeoChart"
-                data={[
-                    ['Country', 'Popularity'],
-                    ['Germany', 200],
-                    ['United States', 300],
-                    ['Brazil', 400],
-                    ['Canada', 500],
-                    ['France', 600],
-                    ['RU', 700],
-                  ]}
+                data={this.props.data}
                 mapsApiKey={googlemaps_apikey}
+                options={{
+                    colorAxis: { colors: ['#49BEB7', '#FACF5A', '#FF5959'] },
+                }}
                 />
             </div>
         )
