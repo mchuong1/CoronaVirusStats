@@ -1,6 +1,5 @@
 import React from "react"
 import Chart from 'react-google-charts'
-import googlemaps_apikey from '../resource/key.json'
 
 class Map extends React.Component{
     
@@ -12,7 +11,7 @@ class Map extends React.Component{
                 height={'600px'}
                 chartType="GeoChart"
                 data={this.props.data}
-                mapsApiKey={googlemaps_apikey}
+                mapsApiKey={process.env.REACT_APP_GOOGLE_API_KEY}
                 options={{
                     colorAxis: { colors: ['#49BEB7', '#FACF5A', '#FF5959'] },
                     datalessRegionColor: '#085F63'
