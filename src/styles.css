@@ -355,7 +355,7 @@ body{
     font-size: x-large;
   }
   .map{
-    max-width: 315px;
+    max-width: 84vw;
   }
   .column-1{
     display: grid;
