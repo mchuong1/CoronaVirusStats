@@ -5,7 +5,7 @@ class Map extends React.Component{
     constructor(){
         super()
         this.state = {
-            width: '315px',
+            width: '85vw',
             height: '200px'
         }
     }
