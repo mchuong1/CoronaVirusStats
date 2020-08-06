@@ -99,19 +99,19 @@ class World extends React.Component {
 
   render() {
     return (
-        <div className="world">
-            <div className="world-header">
-              <h1>World Statistics</h1>
-            </div>
-            <div className="world-card-row">
-              <TotalCasesCard totalConfirmed={this.state.totalConfirmed} newConfirmed={this.state.newConfirmed}/>
-              <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
-              <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
-            </div>
-            <div>
-              <Map data={this.state.data}/>
-            </div>
-        </div>
+      <div className="world">
+          <div className="world-header">
+            <h1>World Statistics</h1>
+          </div>
+          <div className="world-card-row">
+            <TotalCasesCard totalConfirmed={this.state.totalConfirmed} newConfirmed={this.state.newConfirmed}/>
+            <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
+            <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
+          </div>
+          <div>
+            <Map data={this.state.data}/>
+          </div>
+      </div>
     )
   }
 }
