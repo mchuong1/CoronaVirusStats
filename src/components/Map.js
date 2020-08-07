@@ -5,21 +5,25 @@ class Map extends React.Component{
     constructor(){
         super()
         this.state = {
-            width: '85vw',
-            height: '200px'
+            width: '1200px',
+            height: '600px'
         }
     }
-    componentDidMount(){
 
+    componentDidMount(){
+        this.updateDimensions();
+        window.addEventListener('resize', this.updateDimensions)
     }
     updateDimensions = () =>{
-        if(window.innerWidth < 500) {
-            this.setState({ width: '300px', height: '200px' });
-          } else {
+        console.log('works')
+        if(window.innerWidth < 1300) {
+            this.setState({ width: '84vw', height: '200px' });
+        } 
+        else {
             let update_width  = '1200px';
             let update_height = '600px';
             this.setState({ width: update_width, height: update_height });
-          }
+        }
     }
 
     render(){

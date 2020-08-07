@@ -16,10 +16,10 @@ class SideNavBar extends React.Component {
             <p id="close" onClick={this.closeNav}>X</p>
             <h2>Coronavirus Stats</h2>
             <ul>
-                <Link to="/" style={{textDecoration: 'none', color: "black"}} onClick={this.closeNav}>
+                <Link to="/" style={{textDecoration: 'none', color: "black"}}>
                 <li>World Statistics</li>
                 </Link>
-                <Link to="/Country" style={{textDecoration: 'none', color: "black"}} onClick={this.closeNav}>
+                <Link to="/Country" style={{textDecoration: 'none', color: "black"}}>
                 <li>Lookup by Country</li>
                 </Link>
             </ul>
