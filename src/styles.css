@@ -1,5 +1,6 @@
 body{
   margin:0;
+  background-color: #F3F3F7;
 }
 .App {
   font-family: Arial, Helvetica, sans-serif;
@@ -7,7 +8,7 @@ body{
   display: grid;
   grid-template-columns: 15% 65% 15%;
   grid-column-gap: 45px;
-  background-color: #F3F3F7;
+  
 }
 .center{
   display: grid;
@@ -267,6 +268,24 @@ body{
 .darkgreen{
   border: 3px solid #085f63;
 }
+/* Dark Theme */
+body.dark-theme{
+  background-color: #212121;
+  color: #EEEEEE;
+}
+body.dark-theme div{
+  background-color: #28282A;
+}
+body.dark-theme a{
+  color: #EEEEEE;
+}
+body.dark-theme li{
+  color: #EEEEEE;
+}
+body.dark-theme input{
+  color: #EEEEEE;
+  background-color: #2F2F2F;
+}
 
 @media (max-width: 991px){
   .App{
@@ -306,7 +325,7 @@ body{
     cursor: pointer;
   }
 }
-@media(max-width: 479px){
+@media(max-width: 500px){
   .App{
     width: 100vw;
   }

@@ -15,14 +15,11 @@ class Map extends React.Component{
         window.addEventListener('resize', this.updateDimensions)
     }
     updateDimensions = () =>{
-        console.log('works')
-        if(window.innerWidth < 1300) {
+        if(window.innerWidth < 500) {
             this.setState({ width: '84vw', height: '200px' });
         } 
         else {
-            let update_width  = '1200px';
-            let update_height = '600px';
-            this.setState({ width: update_width, height: update_height });
+            this.setState({ width: '1200px', height: '600px' });
         }
     }
 
