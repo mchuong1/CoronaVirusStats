@@ -6,7 +6,7 @@ exports[`ActiveGraph renders correctly 1`] = `
   id="Active"
 >
   <h3
-    className="title-graph"
+    className="title"
   >
     Daily Active Cases
   </h3>
@@ -32,7 +32,7 @@ exports[`DeathGraph renders correctly 1`] = `
   id="Deaths"
 >
   <h3
-    className="title-graph"
+    className="title"
   >
     Daily Death Cases
   </h3>
@@ -45,7 +45,7 @@ exports[`NewCasesGraph renders correctly 1`] = `
   id="New"
 >
   <h3
-    className="title-graph"
+    className="title"
   >
     Daily New Cases
   </h3>
@@ -58,7 +58,7 @@ exports[`RecoveredGraph renders correctly 1`] = `
   id="Recovered"
 >
   <h3
-    className="title-graph"
+    className="title"
   >
     Daily Recovered Cases
   </h3>
@@ -99,7 +99,7 @@ exports[`SideNavBar renders correctly 1`] = `
         }
       >
         <li>
-          World
+          World Statistics
         </li>
       </a>
       <a
@@ -127,11 +127,17 @@ exports[`SideNavBar renders correctly 1`] = `
         >
           COVID19 API
         </a>
-         and 
+         
         <a
           href="https://www.chartjs.org/"
         >
           ChartJs
+        </a>
+         and 
+        <a
+          href="https://developers.google.com/chart"
+        >
+          Google Charts
         </a>
       </p>
     </div>
@@ -182,7 +188,7 @@ exports[`Tab renders correctly 1`] = `
 
 exports[`TotalActiveCard renders correctly 1`] = `
 <div
-  className="card red"
+  className="card-icon red"
 >
   <img
     alt=""
@@ -190,12 +196,12 @@ exports[`TotalActiveCard renders correctly 1`] = `
     src="Active.png"
   />
   <div
-    className="title"
+    className="title grid-column-2"
   >
     Total Active
   </div>
   <span
-    className="count"
+    className="count grid-column-2"
     style={
       Object {
         "color": "red",
@@ -205,7 +211,7 @@ exports[`TotalActiveCard renders correctly 1`] = `
     0
   </span>
   <div
-    className="newcount"
+    className="newcount grid-column-2"
   >
     0
      New Active
@@ -215,7 +221,7 @@ exports[`TotalActiveCard renders correctly 1`] = `
 
 exports[`TotalConfirmedCard renders correctly 1`] = `
 <div
-  className="card orange"
+  className="card-icon orange"
 >
   <img
     alt=""
@@ -223,12 +229,12 @@ exports[`TotalConfirmedCard renders correctly 1`] = `
     src="virus.png"
   />
   <div
-    className="title"
+    className="title grid-column-2"
   >
     Total Confirmed
   </div>
   <span
-    className="count"
+    className="count grid-column-2"
     style={
       Object {
         "color": "rgba(255,128,0)",
@@ -238,7 +244,7 @@ exports[`TotalConfirmedCard renders correctly 1`] = `
     1
   </span>
   <div
-    className="newcount"
+    className="newcount grid-column-2"
   >
     0
      New Cases
@@ -248,7 +254,7 @@ exports[`TotalConfirmedCard renders correctly 1`] = `
 
 exports[`TotalDeathsCard renders correctly 1`] = `
 <div
-  className="card darkgreen"
+  className="card-icon darkgreen"
 >
   <img
     alt=""
@@ -256,12 +262,12 @@ exports[`TotalDeathsCard renders correctly 1`] = `
     src="rip.png"
   />
   <div
-    className="title"
+    className="title grid-column-2"
   >
     Total Deaths
   </div>
   <span
-    className="count"
+    className="count grid-column-2"
     style={
       Object {
         "color": "#085f63",
@@ -271,7 +277,7 @@ exports[`TotalDeathsCard renders correctly 1`] = `
     0
   </span>
   <div
-    className="newcount"
+    className="newcount grid-column-2"
   >
     0
      New Deaths
@@ -281,7 +287,7 @@ exports[`TotalDeathsCard renders correctly 1`] = `
 
 exports[`TotalRecoveredCard renders correctly 1`] = `
 <div
-  className="card green"
+  className="card-icon green"
 >
   <img
     alt=""
@@ -289,12 +295,12 @@ exports[`TotalRecoveredCard renders correctly 1`] = `
     src="recovered.png"
   />
   <div
-    className="title"
+    className="title grid-column-2"
   >
     Total Recovered
   </div>
   <span
-    className="count"
+    className="count grid-column-2"
     style={
       Object {
         "color": "rgba(0,204,0)",
@@ -304,7 +310,7 @@ exports[`TotalRecoveredCard renders correctly 1`] = `
     0
   </span>
   <div
-    className="newcount"
+    className="newcount grid-column-2"
   >
     0
      New Recovered
@@ -317,7 +323,7 @@ exports[`World renders correctly 1`] = `
   className="world"
 >
   <div
-    className="header"
+    className="world-header"
   >
     <h1>
       World Statistics
@@ -327,7 +333,7 @@ exports[`World renders correctly 1`] = `
     className="world-card-row"
   >
     <div
-      className="card orange"
+      className="card-icon orange"
     >
       <img
         alt=""
@@ -335,12 +341,12 @@ exports[`World renders correctly 1`] = `
         src="virus.png"
       />
       <div
-        className="title"
+        className="title grid-column-2"
       >
         Total Confirmed
       </div>
       <span
-        className="count"
+        className="count grid-column-2"
         style={
           Object {
             "color": "rgba(255,128,0)",
@@ -350,14 +356,14 @@ exports[`World renders correctly 1`] = `
         
       </span>
       <div
-        className="newcount"
+        className="newcount grid-column-2"
       >
         
          New Cases
       </div>
     </div>
     <div
-      className="card green"
+      className="card-icon green"
     >
       <img
         alt=""
@@ -365,12 +371,12 @@ exports[`World renders correctly 1`] = `
         src="recovered.png"
       />
       <div
-        className="title"
+        className="title grid-column-2"
       >
         Total Recovered
       </div>
       <span
-        className="count"
+        className="count grid-column-2"
         style={
           Object {
             "color": "rgba(0,204,0)",
@@ -380,14 +386,14 @@ exports[`World renders correctly 1`] = `
         
       </span>
       <div
-        className="newcount"
+        className="newcount grid-column-2"
       >
         
          New Recovered
       </div>
     </div>
     <div
-      className="card darkgreen"
+      className="card-icon darkgreen"
     >
       <img
         alt=""
@@ -395,25 +401,49 @@ exports[`World renders correctly 1`] = `
         src="rip.png"
       />
       <div
-        className="title"
+        className="title grid-column-2"
       >
         Total Deaths
       </div>
       <span
-        className="count"
+        className="count grid-column-2"
         style={
           Object {
             "color": "#085f63",
           }
         }
       >
-        undefined
+        
       </span>
       <div
-        className="newcount"
+        className="newcount grid-column-2"
       >
-        undefined
+        
          New Deaths
+      </div>
+    </div>
+  </div>
+  <div
+    className="world-map"
+  >
+    <div
+      className="map darkgreen"
+    >
+      <h2>
+        Total Confirmed GeoChart
+      </h2>
+    </div>
+  </div>
+  <div
+    className="world-right grid-column-2"
+  >
+    <div
+      className="card-icon"
+    >
+      <div
+        className="title"
+      >
+        Top 5 Confirmed
       </div>
     </div>
   </div>
