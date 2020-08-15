@@ -4,6 +4,7 @@ import TotalCasesCard from './Cards/TotalCasesCard'
 import TotalRecoveredCard from './Cards/TotalRecoveredCard'
 import TotalDeathsCard from './Cards/TotalDeathsCard'
 import Map from './Map'
+import Top5Confirmed from './Cards/Top5Confirmed'
 
 class World extends React.Component {
 	constructor(){
@@ -108,8 +109,11 @@ class World extends React.Component {
             <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
             <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
           </div>
-          <div>
+          <div className="world-map">
             <Map data={this.state.data}/>
+          </div>
+          <div className="world-right grid-column-2">
+            <Top5Confirmed />
           </div>
       </div>
     )

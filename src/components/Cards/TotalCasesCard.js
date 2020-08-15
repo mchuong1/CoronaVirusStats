@@ -9,16 +9,16 @@ class TotalCasesCard extends React.Component {
     totalConfirmed = addComma(totalConfirmed)
     newConfirmed = addComma(newConfirmed)
     return (
-        <div className="card orange">
-          <img alt="" src={virus} className="icon"></img>
-          <div className="title">Total Confirmed</div>
-          <span className="count" style={{color: "rgba(255,128,0)"}}>{totalConfirmed}</span>
-          <div className="newcount">{newConfirmed} New Cases</div>
-        </div>
+      <div className="card-icon orange">
+        <img alt="" src={virus} className="icon"></img>
+        <div className="title grid-column-2">Total Confirmed</div>
+        <span className="count grid-column-2" style={{ color: "rgba(255,128,0)" }}>{totalConfirmed}</span>
+        <div className="newcount grid-column-2">{newConfirmed} New Cases</div>
+      </div>
     )
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 }
 
 export default TotalCasesCard;

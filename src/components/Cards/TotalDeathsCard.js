@@ -9,16 +9,16 @@ class TotalDeathsCard extends React.Component {
     totalDeaths = addComma(totalDeaths)
     newDeaths = addComma(newDeaths)
     return (
-        <div className="card darkgreen">
-          <img alt="" src={rip} className="icon"></img>
-          <div className="title">Total Deaths</div>
-          <span className="count" style={{color: "#085f63"}}>{totalDeaths}</span>
-          <div className="newcount">{newDeaths} New Deaths</div>
-        </div>
+      <div className="card-icon darkgreen">
+        <img alt="" src={rip} className="icon"></img>
+        <div className="title grid-column-2">Total Deaths</div>
+        <span className="count grid-column-2" style={{ color: "#085f63" }}>{totalDeaths}</span>
+        <div className="newcount grid-column-2">{newDeaths} New Deaths</div>
+      </div>
     )
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 }
 
 export default TotalDeathsCard;

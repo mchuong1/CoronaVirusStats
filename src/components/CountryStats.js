@@ -155,7 +155,7 @@ class CountryStats extends React.Component {
               <NewCasesGraph data={this.state.newCases} dates={this.state.dates}/>
               <ActiveCaseGraph data={this.state.activeCases} dates={this.state.dates}/>
             </div>
-            <div className='column-2'>
+            <div className='column-2 grid-column-2'>
               <RecoveredGraph data={this.state.recoveredCases} dates={this.state.dates}/>
               <DeathGraph data={this.state.deathCases} dates={this.state.dates}/>
             </div>

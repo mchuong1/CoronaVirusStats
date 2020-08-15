@@ -6,14 +6,17 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   display: grid;
-  grid-template-columns: 15% 65% 15%;
+  grid-template-columns: 15% 80%;
   grid-column-gap: 45px;
   
 }
 .center{
   display: grid;
-  grid-column: 2;
   min-height: 100vh;
+}
+
+.right{
+  display: grid;
 }
 
 .footer {
@@ -31,18 +34,24 @@ body{
 
 .countrystats{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
 .world{
   display: grid;
   grid-row-gap: 20px;
+  grid-column-gap: 20px;
   grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr;
 }
 .world h1{
   text-align: left;
   margin-bottom: 0;
+}
+.world-right{
+  display: grid;
+  grid-row: 2;
 }
 .tab{
   width: fit-content;
@@ -105,10 +114,14 @@ body{
 }
 .world-card-row{
   display: grid;
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 1;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   height: fit-content;
+}
+.world-map{
+  display: grid;
+  grid-column: 1/ span 1;
 }
 .column-1{
   grid-column: 1;
@@ -117,7 +130,6 @@ body{
   grid-row-gap: 20px;
 }
 .column-2{
-  grid-column: 2;
   display: grid;
   height: fit-content;
   grid-row-gap: 20px;
@@ -135,22 +147,14 @@ body{
   font-weight: bold;
   font-size: 22px;
   margin-bottom: 10px;
-  grid-column: 2;
-}
-.title-graph{
-  font-weight: bold;
-  font-size: 22px;
-  margin-bottom: 10px;
-  grid-column: 2;
 }
 .count{
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 10px;
-  grid-column: 2;
 }
 .newcount{
-  grid-column: 2;
+  font-size: initial;
 }
 .autocomplete{
   width: 100%;
@@ -191,7 +195,7 @@ body{
   text-decoration: underline;
 }
 
-.card{
+.card-icon{
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
   height:121px;
   padding: 10px;
@@ -203,10 +207,10 @@ body{
   grid-template-columns: 30% 1fr;
   grid-column-gap: 20px;
 }
-.card h2{
+.card-icon h2{
   margin-bottom: 10px;
 }
-.card div{
+.card-icon div{
   margin-top: 10px;
 }
 .map{
@@ -218,7 +222,7 @@ body{
   background-color: white;
   text-align: left;
   display: grid;
-  width: 99%;
+  width: 98%;
 }
 .map h2{
   margin: 0;
@@ -249,6 +253,7 @@ body{
 #close{
   display: none;
 }
+/* Common */
 .red{
   border: 3px solid #ff5959;
 }
@@ -267,6 +272,15 @@ body{
 
 .darkgreen{
   border: 3px solid #085f63;
+}
+.grid-column-1{
+  grid-column: 1;
+}
+.grid-column-2{
+  grid-column: 2;
+}
+.grid-column-3{
+  grid-column: 3;
 }
 /* Dark Theme */
 body.dark-theme{
@@ -384,7 +398,7 @@ body.dark-theme input{
     height: fit-content;
     grid-row-gap: 20px;
   }
-  .card{
+  .card-icon{
     height: 114px;
   }
   .graph{

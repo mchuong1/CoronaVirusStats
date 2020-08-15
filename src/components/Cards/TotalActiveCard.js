@@ -9,16 +9,16 @@ class TotalActiveCard extends React.Component {
     newActive = addComma(newActive)
     totalActive = addComma(totalActive)
     return (
-        <div className="card red">
-          <img alt="" src={active} className="icon"></img>
-          <div className="title">Total Active</div>
-          <span className="count" style={{color:'red'}}>{totalActive}</span>
-          <div className="newcount">{newActive} New Active</div>
-        </div>
+      <div className="card-icon red">
+        <img alt="" src={active} className="icon"></img>
+        <div className="title grid-column-2">Total Active</div>
+        <span className="count grid-column-2" style={{ color: 'red' }}>{totalActive}</span>
+        <div className="newcount grid-column-2">{newActive} New Active</div>
+      </div>
     )
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 }
 
 export default TotalActiveCard;

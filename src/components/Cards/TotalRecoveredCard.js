@@ -9,16 +9,16 @@ class TotalRecoveredCard extends React.Component {
     totalRecovered = addComma(totalRecovered)
     newRecovered = addComma(newRecovered)
     return (
-        <div className="card green">
-          <img alt="" src={recovered} className="icon"></img>
-          <div className="title">Total Recovered</div>
-          <span className="count" style={{color: "rgba(0,204,0)"}}>{totalRecovered}</span>
-          <div className="newcount">{newRecovered} New Recovered</div>
-        </div>
+      <div className="card-icon green">
+        <img alt="" src={recovered} className="icon"></img>
+        <div className="title grid-column-2">Total Recovered</div>
+        <span className="count grid-column-2" style={{ color: "rgba(0,204,0)" }}>{totalRecovered}</span>
+        <div className="newcount grid-column-2">{newRecovered} New Recovered</div>
+      </div>
     )
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 }
 
 export default TotalRecoveredCard;

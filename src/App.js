@@ -13,13 +13,11 @@ class App extends React.Component {
           <div className="left">
             <SideNaveBar />
           </div>
-          <div className="center">
+          <div className="center grid-column-2">
             <Switch>
               <Route exact path="/" component={World}/>
               <Route path="/Country"  component={CountryStats}/>
             </Switch>
-          </div>
-          <div className="right">            
           </div>
         </div>
       </Router>
