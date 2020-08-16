@@ -194,7 +194,19 @@ body{
   background-color: lightgray;
   text-decoration: underline;
 }
-
+.card{
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+  height:121px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  text-align: left;
+  display: grid;
+}
+.card div{
+  margin-top: 10px;
+}
 .card-icon{
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
   height:121px;
@@ -206,9 +218,6 @@ body{
   display: grid;
   grid-template-columns: 30% 1fr;
   grid-column-gap: 20px;
-}
-.card-icon h2{
-  margin-bottom: 10px;
 }
 .card-icon div{
   margin-top: 10px;

@@ -10,7 +10,7 @@ class World extends React.Component {
 	constructor(){
 			super()
 			this.state = {
-          data: [],
+          confirmedArray: [],
           worlddata: [],
           newConfirmed: '',
           totalConfirmed: '',
@@ -95,7 +95,7 @@ class World extends React.Component {
       temp = [country.Country, country.TotalConfirmed]
       tempdata.push(temp)
     });
-    this.setState({data: tempdata})
+    this.setState({confirmedArray: tempdata})
   }
 
   render() {
@@ -109,11 +109,11 @@ class World extends React.Component {
             <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
             <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
           </div>
-          <div className="world-map">
-            <Map data={this.state.data}/>
-          </div>
           <div className="world-right grid-column-2">
-            <Top5Confirmed />
+            <Top5Confirmed data={this.state.confirmedArray}/>
+          </div>
+          <div className="world-map">
+            <Map data={this.state.confirmedArray}/>
           </div>
       </div>
     )
