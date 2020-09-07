@@ -110,7 +110,7 @@ class World extends React.Component {
             <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
           </div>
           <div className="world-right grid-column-2">
-            <Top5Confirmed data={this.state.confirmedArray}/>
+            {/* <Top5Confirmed data={this.state.confirmedArray}/> */}
           </div>
           <div className="world-map">
             <Map data={this.state.confirmedArray}/>

@@ -16,14 +16,16 @@ class Top5Confirmed extends React.Component {
     }
   }
 
-  mergeSort(){
-    var { Countries } = this.props.data
-    var left
-    var right
-    var middle 
+  mergeSort = () => {
+    var temp
+    for(var i = 0; i < this.props.data.length; i++){
+      console.log(this.props.data[i])
+    }
+     
   }
 
   componentDidMount() {
+    this.mergeSort()
   }
 
   render() {
