@@ -34,7 +34,7 @@ body{
 
 .countrystats{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
@@ -239,7 +239,7 @@ body{
 .graph{
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
   height: fit-content;
-  width: 31vw;
+  width: 38vw;
   padding: 10px;
   border: 1px solid black;
   border-radius: 10px;
