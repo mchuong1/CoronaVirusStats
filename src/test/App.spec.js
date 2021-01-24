@@ -2,19 +2,19 @@ import React from 'react'
 import { render, unmountComponentAtNode } from "react-dom";
 import renderer from "react-test-renderer"
 import { act } from "react-dom/test-utils";
-import TotalCasesCard from './components/Cards/TotalCasesCard';
-import TotalDeathsCard from './components/Cards/TotalDeathsCard';
-import TotalRecoveredCard from './components/Cards/TotalRecoveredCard';
-import TotalActiveCard from './components/Cards/TotalActiveCard';
-import Tab from "./components/Tab"
-import SideNavBar from './components/SideNavBar'
-import CountryList from './components/CountryList';
+import TotalCasesCard from '../components/Cards/TotalCasesCard';
+import TotalDeathsCard from '../components/Cards/TotalDeathsCard';
+import TotalRecoveredCard from '../components/Cards/TotalRecoveredCard';
+import TotalActiveCard from '../components/Cards/TotalActiveCard';
+import Tab from "../components/Tab"
+import SideNavBar from '../components/SideNavBar'
+import CountryList from '../components/CountryList';
 import { BrowserRouter } from 'react-router-dom';
-import World from './components/World';
-import ActiveCaseGraph from './components/Graphs/ActiveCaseGraph';
-import DeathGraph from './components/Graphs/DeathGraph';
-import RecoveredGraph from './components/Graphs/RecoveredGraph';
-import NewCasesGraph from './components/Graphs/NewCasesGraph';
+import World from '../components/World';
+import ActiveCaseGraph from '../components/Graphs/ActiveCaseGraph';
+import DeathGraph from '../components/Graphs/DeathGraph';
+import RecoveredGraph from '../components/Graphs/RecoveredGraph';
+import NewCasesGraph from '../components/Graphs/NewCasesGraph';
 
 let container = null;
 beforeEach(() => {
