@@ -424,6 +424,9 @@ exports[`World renders correctly 1`] = `
     </div>
   </div>
   <div
+    className="world-right grid-column-2"
+  />
+  <div
     className="world-map"
   >
     <div
@@ -432,19 +435,6 @@ exports[`World renders correctly 1`] = `
       <h2>
         Total Confirmed GeoChart
       </h2>
-    </div>
-  </div>
-  <div
-    className="world-right grid-column-2"
-  >
-    <div
-      className="card-icon"
-    >
-      <div
-        className="title"
-      >
-        Top 5 Confirmed
-      </div>
     </div>
   </div>
 </div>
