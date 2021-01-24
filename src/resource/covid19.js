@@ -1,29 +1,43 @@
 import axios from "axios"
 
 export async function getSummary(){
-    
-    const response = await axios.get('https://api.covid19api.com/summary');
-    
-    return response.data
+    try{
+        const response = await axios.get('https://api.covid19api.com/summary');
+        return response.data
+    }
+    catch(error){
+        console.log(`error ${error}`)
+    }
 }
 
 export async function getDayOneTotalAllStatus(country){
-
-    const response = await axios.get('https://api.covid19api.com/total/dayone/country/' + country)
-
-    return response.data
+    try{
+        const response = await axios.get('https://api.covid19api.com/total/dayone/country/' + country)
+        return response.data
+    }
+    catch(error){
+        console.log(`error ${error}`)
+    }
 }
 
 export async function getWorldTotalWIP(){
-    const response = await axios.get('https://api.covid19api.com/world/total')
-
-    return response.data
+    try{
+        const response = await axios.get('https://api.covid19api.com/world/total')   
+        return response.data
+    }
+    catch(error){
+        console.log(`error ${error}`)
+    }
 }
 
 export async function getCountries(){
-    const response = await axios.get('https://api.covid19api.com/countries')
-    
-    return response.data
+    try{
+        const response = await axios.get('https://api.covid19api.com/countries')   
+        return response.data
+    }
+    catch(error){
+        console.log(`error ${error}`)
+    }
 }
 
 export function transformISODate(isoDate){
