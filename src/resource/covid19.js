@@ -7,38 +7,23 @@ export async function getSummary(){
     return response.data
 }
 
-export function getDayOneTotalAllStatus(country){
-    try{
-        return axios.get('https://api.covid19api.com/total/dayone/country/' + country)
-        .then(function(response) {         
-            return response.data
-        })
-        .catch(function(error){
-            console.log(error)
-        })
-    } catch (err) {
-        console.log(err)
-    }
+export async function getDayOneTotalAllStatus(country){
+
+    const response = await axios.get('https://api.covid19api.com/total/dayone/country/' + country)
+
+    return response.data
 }
 
-export function getWorldTotalWIP(){
-    return axios.get('https://api.covid19api.com/world/total')
-    .then(function(response) {
-        return response.data
-    })
-    .catch(function(error){
-        console.log(error)
-    })
+export async function getWorldTotalWIP(){
+    const response = await axios.get('https://api.covid19api.com/world/total')
+
+    return response.data
 }
 
-export function getCountries(){
-    return axios.get('https://api.covid19api.com/countries')
-    .then(function(response) {
-        return response.data
-    })
-    .catch(function(error){
-        console.log(error)
-    })
+export async function getCountries(){
+    const response = await axios.get('https://api.covid19api.com/countries')
+    
+    return response.data
 }
 
 export function transformISODate(isoDate){
