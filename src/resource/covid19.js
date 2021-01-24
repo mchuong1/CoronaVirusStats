@@ -1,17 +1,10 @@
 import axios from "axios"
 
-export function getSummary(){
-    try{
-        return axios.get('https://api.covid19api.com/summary')
-        .then(function(response) {
-            return response.data
-        })
-        .catch(function(error){
-            console.log(error)
-        })
-    } catch (err) {
-        console.log(err)
-    }
+export async function getSummary(){
+    
+    const response = await axios.get('https://api.covid19api.com/summary');
+    
+    return response.data
 }
 
 export function getDayOneTotalAllStatus(country){
