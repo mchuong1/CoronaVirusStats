@@ -38,10 +38,10 @@ class CountryStats extends React.Component {
     .then(response => this.setState({data: response}))
     .then(() => {
       this.getDates()
-      this.getDailyActiveCases()
-      this.getDailyNewCases()
-      this.getDailyRecoveredCases()
-      this.getDailyDeathCases()
+      this.getDailyCases(this.state.data, "Active", "activeCases")
+      this.getDailyCases(this.state.data, "Confirmed", "newCases")
+      this.getDailyCases(this.state.data, "Recovered", "recoveredCases")
+      this.getDailyCases(this.state.data, "Deaths", "deathCases")
       this.getTotalandNewCases()
     })
     .catch(err => console.log(err))
@@ -56,10 +56,10 @@ class CountryStats extends React.Component {
     .then(response => this.setState({data: response, country: event.Country, slug: event.Slug}))
     .then(() => {
       this.getDates()
-      this.getDailyActiveCases()
-      this.getDailyNewCases()
-      this.getDailyRecoveredCases()
-      this.getDailyDeathCases()
+      this.getDailyCases(this.state.data, "Active", "activeCases")
+      this.getDailyCases(this.state.data, "Confirmed", "newCases")
+      this.getDailyCases(this.state.data, "Recovered", "recoveredCases")
+      this.getDailyCases(this.state.data, "Deaths", "deathCases")
       this.getTotalandNewCases()
     })
     .catch(err => console.log(err))
@@ -72,57 +72,17 @@ class CountryStats extends React.Component {
     })
     this.setState({dates:tempdates})
   }
-  getDailyActiveCases = () => {
-    var { data } = this.state
-    var cases = []
+  getDailyCases = (data, type, state) => {
     var dailyCase
+    var cases = []
     for(var i = 1; i <= data.length-1; i++){
-      dailyCase = data[i].Active - data[i-1].Active
+      dailyCase = data[i][type] - data[i-1][type]
       if(dailyCase > 0) 
         cases.push(dailyCase)
       else
         cases.push(0)
     }
-    this.setState({activeCases: cases})
-  }
-  getDailyNewCases = () => {
-    var { data } = this.state
-    var cases = []
-    var dailyCase
-    for(var i = 1; i <= data.length-1; i++){
-      dailyCase = data[i].Confirmed - data[i-1].Confirmed
-      if(dailyCase > 0) 
-        cases.push(dailyCase)
-      else
-        cases.push(0)
-    }
-    this.setState({newCases: cases})
-  }
-  getDailyRecoveredCases = () => {
-    var { data } = this.state
-    var cases = []
-    var dailyCase
-    for(var i = 1; i <= data.length-1; i++){
-      dailyCase = data[i].Recovered - data[i-1].Recovered
-      if(dailyCase > 0) 
-        cases.push(dailyCase)
-      else
-        cases.push(0)
-    }
-    this.setState({recoveredCases: cases})
-  }
-  getDailyDeathCases = () => {
-    var { data } = this.state
-    var cases = []
-    var dailyCase
-    for(var i = 1; i <= data.length-1; i++){
-      dailyCase = data[i].Deaths - data[i-1].Deaths
-      if(dailyCase > 0) 
-        cases.push(dailyCase)
-      else
-        cases.push(0)
-    }
-    this.setState({deathCases: cases})
+    this.setState({[state]: cases})
   }
   getTotalandNewCases = () => {
     var { data } = this.state
