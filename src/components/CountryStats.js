@@ -5,10 +5,11 @@ import DeathGraph from './Graphs/DeathGraph'
 import RecoveredGraph from './Graphs/RecoveredGraph'
 import NewCasesGraph from './Graphs/NewCasesGraph'
 import CountryList from './CountryList'
-import TotalCasesCard from './Cards/TotalCasesCard'
-import TotalRecoveredCard from './Cards/TotalRecoveredCard'
-import TotalDeathsCard from './Cards/TotalDeathsCard'
-import TotalActiveCard from './Cards/TotalActiveCard'
+import TotalCard from './Cards/TotalCard'
+import active from '../img/Active.png'
+import virus from '../img/virus.png'
+import recovered from '../img/recovered.png'
+import rip from '../img/rip.png'
 
 class CountryStats extends React.Component {
 	constructor(){
@@ -106,10 +107,30 @@ class CountryStats extends React.Component {
               <h1>{this.state.country}</h1>
             </div>
             <div className="card-row">
-              <TotalCasesCard totalConfirmed={this.state.totalConfirmed} newConfirmed={this.state.newConfirmed}/>
-              <TotalActiveCard totalActive={this.state.totalActive} newActive={this.state.newActive}/>
-              <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
-              <TotalDeathsCard totalDeaths={this.state.totalDeath} newDeaths={this.state.newDeath}/>
+              <TotalCard 
+                totalNum={this.state.totalConfirmed} 
+                newNum={this.state.newConfirmed} 
+                png={virus}
+                Type="Confirmed"
+                color="orange"/>
+              <TotalCard 
+                totalNum={this.state.totalActive} 
+                newNum={this.state.newActive} 
+                png={active}
+                Type="Active"
+                color="red"/>
+              <TotalCard 
+                totalNum={this.state.totalRecovered} 
+                newNum={this.state.newRecovered} 
+                png={recovered}
+                Type="Recovered"
+                color="green"/>
+              <TotalCard 
+                totalNum={this.state.totalDeath} 
+                newNum={this.state.newDeath} 
+                png={rip}
+                Type="Deaths"
+                color="darkgreen"/>
             </div>
             <div className='column-1'>
               <NewCasesGraph data={this.state.newCases} dates={this.state.dates}/>

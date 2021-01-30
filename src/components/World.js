@@ -1,10 +1,10 @@
 import React from "react";
 import { getSummary } from "../resource/covid19"
-import TotalCasesCard from './Cards/TotalCasesCard'
-import TotalRecoveredCard from './Cards/TotalRecoveredCard'
-import TotalDeathsCard from './Cards/TotalDeathsCard'
 import Map from './Map'
-import Top5Confirmed from './Cards/Top5Confirmed'
+import TotalCard from './Cards/TotalCard'
+import virus from '../img/virus.png'
+import recovered from '../img/recovered.png'
+import rip from '../img/rip.png'
 
 class World extends React.Component {
 	constructor(){
@@ -16,8 +16,8 @@ class World extends React.Component {
           totalConfirmed: '',
           newRecovered: '',
           totalRecovered: '',
-          newDeaths: '',
-          totalDeaths: ''
+          newDeath: '',
+          totalDeath: ''
 			}
   }
   componentDidMount() {
@@ -30,8 +30,8 @@ class World extends React.Component {
         totalConfirmed: Global.TotalConfirmed,
         newRecovered: Global.NewRecovered,
         totalRecovered: Global.TotalRecovered,
-        newDeaths: Global.NewDeaths,
-        totalDeaths: Global.TotalDeaths
+        newDeath: Global.NewDeaths,
+        totalDeath: Global.TotalDeaths
       })
     })
     .then(this.createGeoData)
@@ -105,12 +105,24 @@ class World extends React.Component {
             <h1>World Statistics</h1>
           </div>
           <div className="world-card-row">
-            <TotalCasesCard totalConfirmed={this.state.totalConfirmed} newConfirmed={this.state.newConfirmed}/>
-            <TotalRecoveredCard totalRecovered={this.state.totalRecovered} newRecovered={this.state.newRecovered}/>
-            <TotalDeathsCard totalDeaths={this.state.totalDeaths} newDeaths={this.state.newDeaths}/>
-          </div>
-          <div className="world-right grid-column-2">
-            {/* <Top5Confirmed data={this.state.confirmedArray}/> */}
+            <TotalCard 
+              totalNum={this.state.totalConfirmed} 
+              newNum={this.state.newConfirmed} 
+              png={virus}
+              Type="Confirmed"
+              color="orange"/>
+            <TotalCard 
+              totalNum={this.state.totalRecovered} 
+              newNum={this.state.newRecovered} 
+              png={recovered}
+              Type="Recovered"
+              color="green"/>
+            <TotalCard 
+              totalNum={this.state.totalDeath} 
+              newNum={this.state.newDeath} 
+              png={rip}
+              Type="Deaths"
+              color="darkgreen"/>
           </div>
           <div className="world-map">
             <Map data={this.state.confirmedArray}/>
