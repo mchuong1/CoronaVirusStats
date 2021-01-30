@@ -1,10 +1,7 @@
 import React from "react";
 import { getDayOneTotalAllStatus, getCountries, transformISODate } from "../resource/covid19"
-import ActiveCaseGraph from "./Graphs/ActiveCaseGraph"
-import DeathGraph from './Graphs/DeathGraph'
-import RecoveredGraph from './Graphs/RecoveredGraph'
-import NewCasesGraph from './Graphs/NewCasesGraph'
 import CountryList from './CountryList'
+import CaseGraph from './Graphs/CaseGraph'
 import TotalCard from './Cards/TotalCard'
 import active from '../img/Active.png'
 import virus from '../img/virus.png'
@@ -133,12 +130,32 @@ class CountryStats extends React.Component {
                 color="darkgreen"/>
             </div>
             <div className='column-1'>
-              <NewCasesGraph data={this.state.newCases} dates={this.state.dates}/>
-              <ActiveCaseGraph data={this.state.activeCases} dates={this.state.dates}/>
+              <CaseGraph 
+                data={this.state.newCases}
+                dates={this.state.dates}
+                type="New"
+                color="orange"
+                bgcolor="#facf5a"/>
+              <CaseGraph 
+                data={this.state.activeCases}
+                dates={this.state.dates}
+                type="Active"
+                color="red"
+                bgcolor="#ff5959"/>
             </div>
             <div className='column-2 grid-column-2'>
-              <RecoveredGraph data={this.state.recoveredCases} dates={this.state.dates}/>
-              <DeathGraph data={this.state.deathCases} dates={this.state.dates}/>
+              <CaseGraph 
+                data={this.state.recoveredCases}
+                dates={this.state.dates}
+                type="Recovered"
+                color="green"
+                bgcolor="#49beb7"/>
+              <CaseGraph 
+                data={this.state.deathCases}
+                dates={this.state.dates}
+                type="Deaths"
+                color="darkgreen"
+                bgcolor="#085f63"/>
             </div>
         </div>
     )

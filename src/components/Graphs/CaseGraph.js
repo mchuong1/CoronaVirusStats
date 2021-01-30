@@ -1,19 +1,16 @@
 import React from "react"
 import { Line } from "react-chartjs-2"
 
-class RecoveredGraph extends React.Component {
-
-    constructor() {
-        super()
-        this.state = {
-        }
+class CaseGraph extends React.Component {
+    constructor(props) {
+        super(props)
     }
 
     render() {
-        var { data, dates } = this.props
+        var { data, dates, type, color, bgcolor } = this.props
         return (
-            <div id="Recovered" className="graph green">
-                <h3 className="title">Daily Recovered Cases</h3>
+            <div id={type} className={"graph "+color}>
+                <h3 className="title">Daily {type} Cases</h3>
                 <Line
                     width={100}
                     height={50}
@@ -21,8 +18,8 @@ class RecoveredGraph extends React.Component {
                         labels: dates,
                         datasets: [
                             {
-                                label: 'Recovered',
-                                backgroundColor: '#49beb7',
+                                label: type,
+                                backgroundColor: bgcolor,
                                 borderColor: 'rgba(0,0,0,1)',
                                 borderWidth: 2,
                                 pointRadius: 1,
@@ -56,4 +53,4 @@ class RecoveredGraph extends React.Component {
 
 }
 
-export default RecoveredGraph
+export default CaseGraph
