@@ -2,9 +2,6 @@ import React from "react"
 import { Line } from "react-chartjs-2"
 
 class CaseGraph extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         var { data, dates, type, color, bgcolor } = this.props

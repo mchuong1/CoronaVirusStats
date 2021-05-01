@@ -2,9 +2,6 @@ import React from "react";
 import { addComma } from '../../resource/Common'
 
 class TotalCard extends React.Component {
-    constructor(props){
-        super(props)
-    }
 
   render() {
     var { totalNum, newNum, png, Type, color } = this.props
