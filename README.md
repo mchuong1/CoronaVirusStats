@@ -1,2 +1,2 @@
 # CoronaVirusStats
-https://mc-coronavirusstats.herokuapp.com/
+https://mc-coronavirusstats.netlify.app/
