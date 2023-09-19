@@ -22,7 +22,6 @@ class CountryList extends React.Component {
 
   renderSuggestions(){
     var { suggestions } = this.state
-    console.log(suggestions)
     if(suggestions.length === 0) return suggestions
     return (
       <ul>
