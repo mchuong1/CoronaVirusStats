@@ -1,5 +1,7 @@
 import axios from "axios"
 
+const url = "https://covid-api.com/api"
+
 export async function getSummary(){
     try{
         const response = await axios.get('https://api.covid19api.com/summary');
@@ -32,7 +34,7 @@ export async function getWorldTotalWIP(){
 
 export async function getCountries(){
     try{
-        const response = await axios.get('https://api.covid19api.com/countries')   
+        const response = await axios.get(`${url}/regions`)   
         return response.data
     }
     catch(error){

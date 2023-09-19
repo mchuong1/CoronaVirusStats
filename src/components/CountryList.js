@@ -10,22 +10,23 @@ class CountryList extends React.Component {
   }
 
   filterCountries = (event) => {
-    var value = event.target.value
-    var suggestions = []
-    var { countries } = this.props
+    var value = event.target.value;
+    var suggestions = [];
+    var { countries } = this.props;
     if(value.length > 0) {
       const regex = new RegExp(`^${value}`, 'i')
-      suggestions = countries.sort().filter(v=>regex.test(v.Country))
+      suggestions = countries.sort().filter(v=>regex.test(v.name))
     }
     this.setState(() => ({suggestions, text: value}))
   }
 
   renderSuggestions(){
     var { suggestions } = this.state
+    console.log(suggestions)
     if(suggestions.length === 0) return suggestions
     return (
       <ul>
-        {suggestions.map((item) => <li key={suggestions.ISO2} onClick={() => this.suggestionSelected(item)}>{item.Country}</li>)}
+        {suggestions.map((item) => <li key={suggestions.iso} onClick={() => this.suggestionSelected(item)}>{item.name}</li>)}
       </ul>
     )
   }

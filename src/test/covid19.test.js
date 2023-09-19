@@ -1,4 +1,4 @@
-import {transformISODate, getSummary, getDayOneTotalAllStatus, getWorldTotalWIP, getCountries } from '../resource/covid19'
+import {transformISODate, getSummary, getDayOneTotalAllStatus, getWorldTotalWIP } from '../resource/covid19'
 import axios from 'axios'
 import { idText } from 'typescript'
 jest.mock('axios')
@@ -41,17 +41,5 @@ it('returns the stats of the world WIP covid19', async () => {
         ]
     });
     const summary = await getWorldTotalWIP();
-    expect(summary).toEqual([{"test": "test"}]);
-})
-
-it('returns the stats of the countries covid19', async () => {
-    axios.get.mockResolvedValue({
-        data: [
-            {
-               test: 'test'
-            }
-        ]
-    });
-    const summary = await getCountries();
     expect(summary).toEqual([{"test": "test"}]);
 })

@@ -43,9 +43,9 @@ class CountryStats extends React.Component {
       this.getTotalandNewCases()
     })
     .catch(err => console.log(err))
-
+    
     getCountries()
-    .then(response => this.setState({countries:response}))
+    .then(response => this.setState({countries:response.data}))
     .catch(err => console.log(err))
 
   }
