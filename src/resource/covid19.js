@@ -12,6 +12,16 @@ export async function getSummary(){
     }
 }
 
+export async function getReportTotals(country) {
+    try{
+        const response = await axios.get(`${url}/reports/total?date=2023-03-09&iso=${country}`);
+        return response.data
+    }
+    catch(error){
+        console.log(`error ${error}`)
+    }
+}
+
 export async function getDayOneTotalAllStatus(country){
     try{
         const response = await axios.get('https://api.covid19api.com/total/dayone/country/' + country)

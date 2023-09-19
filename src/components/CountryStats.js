@@ -1,5 +1,6 @@
 import React from "react";
-import { getDayOneTotalAllStatus, getCountries, transformISODate } from "../resource/covid19"
+import { getReportTotals, getCountries, transformISODate } from "../resource/covid19"
+import _ from 'lodash';
 import CountryList from './CountryList'
 import CaseGraph from './Graphs/CaseGraph'
 import TotalCard from './Cards/TotalCard'
@@ -12,9 +13,9 @@ class CountryStats extends React.Component {
 	constructor(){
 			super()
 			this.state = {
-					data: [],
+					cases: [],
           country: 'United States of America',
-          slug: 'united-states',
+          slug: 'USA',
           countries: [],
           activeCases: [],
           newCases: [],
@@ -32,15 +33,15 @@ class CountryStats extends React.Component {
 			}
   }
   componentDidMount() {
-    getDayOneTotalAllStatus(this.state.slug)
-    .then(response => this.setState({data: response}))
+    getReportTotals(this.state.slug)
+    .then(response => this.setState({cases: response.data}))
     .then(() => {
       this.getDates()
-      this.getDailyCases(this.state.data, "Active", "activeCases")
-      this.getDailyCases(this.state.data, "Confirmed", "newCases")
-      this.getDailyCases(this.state.data, "Recovered", "recoveredCases")
-      this.getDailyCases(this.state.data, "Deaths", "deathCases")
-      this.getTotalandNewCases()
+      this.getDailyCases(this.state.cases, "Active", "activeCases")
+      this.getDailyCases(this.state.cases, "Confirmed", "newCases")
+      this.getDailyCases(this.state.cases, "Recovered", "recoveredCases")
+      this.getDailyCases(this.state.cases, "Deaths", "deathCases")
+      this.getTotalAndNewCases()
     })
     .catch(err => console.log(err))
     
@@ -50,49 +51,53 @@ class CountryStats extends React.Component {
 
   }
   getCountryStats = (event) => {
-    getDayOneTotalAllStatus(event.Slug)
-    .then(response => this.setState({data: response, country: event.Country, slug: event.Slug}))
+    getReportTotals(event.Slug)
+    .then(response => this.setState({cases: response, country: event.Country, slug: event.Slug}))
     .then(() => {
       this.getDates()
-      this.getDailyCases(this.state.data, "Active", "activeCases")
-      this.getDailyCases(this.state.data, "Confirmed", "newCases")
-      this.getDailyCases(this.state.data, "Recovered", "recoveredCases")
-      this.getDailyCases(this.state.data, "Deaths", "deathCases")
-      this.getTotalandNewCases()
+      this.getDailyCases(this.state.cases, "Active", "activeCases")
+      this.getDailyCases(this.state.cases, "Confirmed", "newCases")
+      this.getDailyCases(this.state.cases, "Recovered", "recoveredCases")
+      this.getDailyCases(this.state.cases, "Deaths", "deathCases")
+      this.getTotalAndNewCases()
     })
     .catch(err => console.log(err))
   }
   getDates = () => {
-    var { data } = this.state
+    var { cases } = this.state
     var tempdates = []
-    data.forEach(item =>{
+    _.map(cases, item =>{
       tempdates.push(transformISODate(item.Date))
     })
     this.setState({dates:tempdates})
   }
-  getDailyCases = (data, type, state) => {
+  getDailyCases = (cases, type, state) => {
     var dailyCase
-    var cases = []
-    for(var i = 1; i <= data.length-1; i++){
-      dailyCase = data[i][type] - data[i-1][type]
+    var reports = []
+    for(var i = 1; i <= cases.length-1; i++){
+      dailyCase = cases[i][type] - cases[i-1][type]
       if(dailyCase > 0) 
-        cases.push(dailyCase)
+      reports.push(dailyCase)
       else
-        cases.push(0)
+      reports.push(0)
     }
     this.setState({[state]: cases})
   }
-  getTotalandNewCases = () => {
-    var { data } = this.state
+  getTotalAndNewCases = () => {
+    const { cases } = this.state
+    const {
+      active, confirmed, recovered, deaths,
+      active_diff, confirmed_diff, recovered_diff, deaths_diff
+    } = cases;
     this.setState({
-      totalActive: data[data.length-1].Active,
-      totalConfirmed: data[data.length-1].Confirmed,
-      totalRecovered: data[data.length-1].Recovered,
-      totalDeath: data[data.length-1].Deaths,
-      newActive: data[data.length-1].Active - data[data.length-2].Active,
-      newConfirmed: data[data.length-1].Confirmed - data[data.length-2].Confirmed,
-      newRecovered: data[data.length-1].Recovered - data[data.length-2].Recovered,
-      newDeath: data[data.length-1].Deaths - data[data.length-2].Deaths
+      totalActive: active,
+      totalConfirmed: confirmed,
+      totalRecovered: recovered,
+      totalDeath: deaths,
+      newActive: active_diff,
+      newConfirmed: confirmed_diff,
+      newRecovered: recovered_diff,
+      newDeath: deaths_diff
     })
   }
 
@@ -130,7 +135,7 @@ class CountryStats extends React.Component {
                 color="darkgreen"/>
             </div>
             <div className='column-1'>
-              <CaseGraph 
+              {/* <CaseGraph 
                 data={this.state.newCases}
                 dates={this.state.dates}
                 type="New"
@@ -141,10 +146,10 @@ class CountryStats extends React.Component {
                 dates={this.state.dates}
                 type="Active"
                 color="red"
-                bgcolor="#ff5959"/>
+                bgcolor="#ff5959"/> */}
             </div>
             <div className='column-2 grid-column-2'>
-              <CaseGraph 
+              {/* <CaseGraph 
                 data={this.state.recoveredCases}
                 dates={this.state.dates}
                 type="Recovered"
@@ -155,7 +160,7 @@ class CountryStats extends React.Component {
                 dates={this.state.dates}
                 type="Deaths"
                 color="darkgreen"
-                bgcolor="#085f63"/>
+                bgcolor="#085f63"/> */}
             </div>
         </div>
     )
