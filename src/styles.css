@@ -328,6 +328,13 @@ body.dark-theme input{
   .graph{
     width: 42vw;
   }
+  .card-row{
+    display: grid;
+    grid-column: 1;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  } 
   .menu{
     display: block;
     background-color: grey;
@@ -348,7 +355,7 @@ body.dark-theme input{
     cursor: pointer;
   }
 }
-@media(max-width: 500px){
+@media(max-width: 660px){
   .App{
     width: 100vw;
   }
