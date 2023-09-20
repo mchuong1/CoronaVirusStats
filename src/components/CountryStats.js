@@ -51,8 +51,9 @@ class CountryStats extends React.Component {
 
   }
   getCountryStats = (event) => {
-    getReportTotals(event.Slug)
-    .then(response => this.setState({cases: response, country: event.Country, slug: event.Slug}))
+    console.log(event);
+    getReportTotals(event.iso)
+    .then(response => this.setState({cases: response.data, country: event.name, slug: event.iso}))
     .then(() => {
       this.getDates()
       this.getDailyCases(this.state.cases, "Active", "activeCases")

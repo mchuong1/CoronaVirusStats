@@ -33,7 +33,7 @@ class CountryList extends React.Component {
   suggestionSelected(value){
     var { getCountryStats } = this.props
     this.setState(()=> ({
-      text:value.Country,
+      text:value.name,
       suggestions: []
     }))
     getCountryStats(value)
