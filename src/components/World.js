@@ -1,10 +1,11 @@
 import React from "react";
-import { getSummary } from "../resource/covid19"
+import { getReportTotals } from "../resource/covid19"
 import Map from './Map'
 import TotalCard from './Cards/TotalCard'
 import virus from '../img/virus.png'
 import recovered from '../img/recovered.png'
 import rip from '../img/rip.png'
+import active from '../img/Active.png'
 
 class World extends React.Component {
 	constructor(){
@@ -17,21 +18,27 @@ class World extends React.Component {
           newRecovered: '',
           totalRecovered: '',
           newDeath: '',
-          totalDeath: ''
+          totalDeath: '',
+          newActive: '',
+          totalActive: '',
 			}
   }
   componentDidMount() {
-    getSummary()
-    .then(response => this.setState({worlddata: response}))
+    getReportTotals()
+    .then(response => this.setState({worlddata: response.data}))
     .then(() =>{
-      var { Global } = this.state.worlddata
+      const { active, confirmed, recovered, deaths,
+        active_diff, confirmed_diff, recovered_diff, deaths_diff
+      } = this.state.worlddata
       this.setState({
-        newConfirmed: Global.NewConfirmed,
-        totalConfirmed: Global.TotalConfirmed,
-        newRecovered: Global.NewRecovered,
-        totalRecovered: Global.TotalRecovered,
-        newDeath: Global.NewDeaths,
-        totalDeath: Global.TotalDeaths
+        newConfirmed: confirmed_diff,
+        totalConfirmed: confirmed,
+        newRecovered: recovered_diff,
+        totalRecovered: recovered,
+        newDeath: deaths_diff,
+        totalDeath: deaths,
+        newActive: active_diff,
+        totalActive: active,
       })
     })
     .then(this.createGeoData)
@@ -104,13 +111,19 @@ class World extends React.Component {
           <div className="world-header">
             <h1>World Statistics</h1>
           </div>
-          <div className="world-card-row">
+          <div className="card-row">
             <TotalCard 
               totalNum={this.state.totalConfirmed} 
               newNum={this.state.newConfirmed} 
               png={virus}
               Type="Confirmed"
-              color="orange"/>
+              color="orange" />
+            <TotalCard 
+                totalNum={this.state.totalActive} 
+                newNum={this.state.newActive} 
+                png={active}
+                Type="Active"
+                color="red"/>
             <TotalCard 
               totalNum={this.state.totalRecovered} 
               newNum={this.state.newRecovered} 

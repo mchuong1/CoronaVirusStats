@@ -12,9 +12,9 @@ export async function getSummary(){
     }
 }
 
-export async function getReportTotals(country) {
+export async function getReportTotals(country = "") {
     try{
-        const response = await axios.get(`${url}/reports/total?date=2023-03-09&iso=${country}`);
+        const response = await axios.get(`${url}/reports/total${country.length > 1 ? "?iso="+country : ""}`);
         return response.data
     }
     catch(error){
