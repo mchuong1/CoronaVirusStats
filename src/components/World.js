@@ -12,7 +12,7 @@ class World extends React.Component {
 			super()
 			this.state = {
           confirmedArray: [],
-          worlddata: [],
+          worldData: [],
           newConfirmed: '',
           totalConfirmed: '',
           newRecovered: '',
@@ -25,11 +25,11 @@ class World extends React.Component {
   }
   componentDidMount() {
     getReportTotals()
-    .then(response => this.setState({worlddata: response.data}))
+    .then(response => this.setState({worldData: response.data}))
     .then(() =>{
       const { active, confirmed, recovered, deaths,
         active_diff, confirmed_diff, recovered_diff, deaths_diff
-      } = this.state.worlddata
+      } = this.state.worldData
       this.setState({
         newConfirmed: confirmed_diff,
         totalConfirmed: confirmed,
@@ -46,8 +46,8 @@ class World extends React.Component {
   }
 
   createGeoData = () => {
-    var { Countries } = this.state.worlddata
-    var tempdata = [['Country', 'Confirmed']]
+    var { Countries } = this.state.worldData
+    var tempData = [['Country', 'Confirmed']]
     var temp
     Countries.forEach(country => {
       switch(country.Country){
@@ -100,9 +100,9 @@ class World extends React.Component {
           break;
       }
       temp = [country.Country, country.TotalConfirmed]
-      tempdata.push(temp)
+      tempData.push(temp)
     });
-    this.setState({confirmedArray: tempdata})
+    this.setState({confirmedArray: tempData})
   }
 
   render() {
