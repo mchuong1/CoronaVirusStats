@@ -12,26 +12,6 @@ export async function getReportTotals(country = "") {
     }
 }
 
-export async function getDayOneTotalAllStatus(country){
-    try{
-        const response = await axios.get('https://api.covid19api.com/total/dayone/country/' + country)
-        return response.data
-    }
-    catch(error){
-        console.log(`error ${error}`)
-    }
-}
-
-export async function getWorldTotalWIP(){
-    try{
-        const response = await axios.get('https://api.covid19api.com/world/total')   
-        return response.data
-    }
-    catch(error){
-        console.log(`error ${error}`)
-    }
-}
-
 export async function getCountries(){
     try{
         const response = await axios.get(`${url}/regions`)   
