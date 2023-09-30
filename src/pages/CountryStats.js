@@ -2,7 +2,7 @@ import React from "react";
 import { getReportTotals, getCountries, transformISODate } from "../resource/covid19"
 import _ from 'lodash';
 import CountryList from '../components/CountryList'
-import CaseGraph from '../components/Graphs/CaseGraph'
+// import CaseGraph from '../components/Graphs/CaseGraph'
 import TotalCard from '../components/Cards/TotalCard'
 import active from '../img/Active.png'
 import virus from '../img/virus.png'
