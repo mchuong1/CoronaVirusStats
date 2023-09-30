@@ -1,7 +1,7 @@
 import React from "react";
 import { getReportTotals } from "../resource/covid19"
-import Map from './Map'
-import TotalCard from './Cards/TotalCard'
+import Map from '../components/Map'
+import TotalCard from '../components/Cards/TotalCard'
 import virus from '../img/virus.png'
 import recovered from '../img/recovered.png'
 import rip from '../img/rip.png'

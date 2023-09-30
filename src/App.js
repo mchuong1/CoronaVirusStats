@@ -1,8 +1,8 @@
 import React from "react"
 import "./styles.css"
-import CountryStats from './components/CountryStats'
 import SideNaveBar from './components/SideNavBar'
-import World from './components/World'
+import CountryStats from './pages/CountryStats'
+import World from './pages/World'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends React.Component {
